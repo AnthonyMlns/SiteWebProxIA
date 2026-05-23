@@ -1,0 +1,13 @@
+# Dossier de références local (images, brief) — non nécessaire en prod
+references/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Claude
+.claude/
+
+# Node (si ajouté plus tard)
+node_modules/
