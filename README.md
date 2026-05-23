@@ -30,7 +30,7 @@ Landing page pour **ProxIA**, cabinet de conseil en implémentation IA pour TPE/
 | Environnement | URL | Statut |
 |---|---|---|
 | GitHub Pages (preview) | https://anthonymlns.github.io/SiteWebProxIA/ | ✅ En ligne |
-| Vercel (production) | https://proxia.fr | ⏳ À venir |
+| Vercel (production) |  | ⏳ À venir |
 
 ## Roadmap
 
