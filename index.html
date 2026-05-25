@@ -315,8 +315,13 @@
       padding: 0 var(--pad-x) clamp(36px, 5vh, 56px);
       display: flex;
       flex-direction: column;
-      align-items: center;
-      text-align: center;
+    }
+
+    .hero-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .hero-eyebrow { margin-bottom: 30px; }
@@ -354,11 +359,9 @@
       gap: 10px;
       align-items: center;
       flex-wrap: wrap;
-      justify-content: center;
     }
 
     .hero-quote {
-      margin-top: auto;
       width: 100%;
       padding: 24px 0;
       border-top: var(--border);
@@ -367,7 +370,6 @@
       grid-template-columns: auto 1fr;
       gap: 24px;
       align-items: center;
-      text-align: left;
     }
     .hero-quote-label {
       font-family: var(--font-mono);
@@ -1123,15 +1125,17 @@
   <!-- ===== HERO ===== -->
   <section id="hero" aria-label="Introduction">
     <div class="hero-inner">
-      <div class="hero-eyebrow">
-        <span class="label">Accompagnement à la transformation numérique et à l'innovation</span>
-      </div>
-      <h1 class="hero-title"><span class="dot">.</span>kairos</h1>
-      <p class="hero-headline">Transformation &amp; optimisation des TPE/PME par l'IA.</p>
-      <p class="hero-tagline">Accompagnement opérationnel, technique et pédagogique —<br>de la découverte au déploiement concret.</p>
-      <div class="hero-cta">
-        <a href="#contact" class="btn">Premier échange — gratuit</a>
-        <a href="#methode" class="btn btn-outline">Voir la méthode</a>
+      <div class="hero-body">
+        <div class="hero-eyebrow">
+          <span class="label">Accompagnement à la transformation numérique et à l'innovation</span>
+        </div>
+        <h1 class="hero-title"><span class="dot">.</span>kairos</h1>
+        <p class="hero-headline">Transformation &amp; optimisation des TPE/PME par l'IA.</p>
+        <p class="hero-tagline">Accompagnement opérationnel, technique et pédagogique —<br>de la découverte au déploiement concret.</p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn">Premier échange — gratuit</a>
+          <a href="#methode" class="btn btn-outline">Voir la méthode</a>
+        </div>
       </div>
       <blockquote class="hero-quote" aria-label="Notre posture">
         <span class="hero-quote-label">Posture</span>
