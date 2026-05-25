@@ -300,12 +300,21 @@
     /* ============================================================
        HERO
     ============================================================ */
-    #hero { padding: 96px 0 80px; }
+    #hero {
+      min-height: calc(100vh - 58px);
+      display: flex;
+      flex-direction: column;
+      padding: clamp(48px, 7vh, 88px) 0 0;
+    }
 
     .hero-inner {
+      flex: 1;
       max-width: var(--max-w);
+      width: 100%;
       margin: 0 auto;
-      padding: 0 var(--pad-x);
+      padding: 0 var(--pad-x) clamp(36px, 5vh, 56px);
+      display: flex;
+      flex-direction: column;
     }
 
     .hero-eyebrow { margin-bottom: 30px; }
@@ -346,7 +355,7 @@
     }
 
     .hero-quote {
-      margin-top: 68px;
+      margin-top: auto;
       padding: 24px 0;
       border-top: var(--border);
       border-bottom: var(--border);
@@ -1034,7 +1043,7 @@
       .nav-hamburger { display: flex; }
 
       /* Hero */
-      #hero { min-height: 90vh; display: flex; align-items: center; padding: 48px 0; }
+      #hero { min-height: calc(100vh - 58px); padding: clamp(36px, 6vh, 56px) 0 0; }
       .hero-title { font-size: clamp(13vw, 14vw, 18vw); letter-spacing: -0.03em; line-height: 0.88; }
       .hero-quote { grid-template-columns: 1fr; gap: 8px; }
       .hero-quote-label { writing-mode: horizontal-tb; transform: none; }
