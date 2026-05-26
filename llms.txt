@@ -1,8 +1,8 @@
-# .kairos
+﻿# kAIros.
 
 > Cabinet de conseil en transformation IA pour les TPE et PME françaises. Accompagnement opérationnel, technique et pédagogique — de la découverte au déploiement concret.
 
-.kairos est une activité de conseil indépendante basée à Montpellier (Occitanie, France), fondée en 2025. Le nom est une référence au concept grec du « bon moment » — l'idée qu'une opportunité de transformation ne se présente qu'une fois, et qu'il faut être prêt à la saisir.
+kAIros. est une activité de conseil indépendante basée à Montpellier (Occitanie, France), fondée en 2025. Le nom est une référence au concept grec du « bon moment » — l'idée qu'une opportunité de transformation ne se présente qu'une fois, et qu'il faut être prêt à la saisir.
 
 L'activité s'adresse aux structures de 1 à 50 collaborateurs qui souhaitent intégrer l'intelligence artificielle dans leurs opérations sans se perdre dans la technique. L'approche est pragmatique : pas de déploiement systématique, pas de solution toute faite — un regard extérieur, des questions, et des actions concrètes adaptées à chaque contexte.
 
@@ -21,7 +21,7 @@ L'activité s'adresse aux structures de 1 à 50 collaborateurs qui souhaitent in
 
 ## Cible
 
-.kairos accompagne les TPE et PME (1–50 collaborateurs) qui :
+kAIros. accompagne les TPE et PME (1–50 collaborateurs) qui :
 - perdent du temps sur des tâches répétitives à faible valeur ajoutée
 - voient l'IA comme une opportunité mais ne savent pas par où commencer
 - ont besoin d'un interlocuteur technique et opérationnel, pas d'un intégrateur généraliste
@@ -38,4 +38,4 @@ Secteurs concernés : commerce, services, artisanat, professions libérales, ind
 
 - [Simulateur ROI](https://anthonymlns.github.io/SiteWebProxIA/#simulateur): Estimateur en ligne du retour sur investissement d'une mission IA selon la taille de la structure, les heures perdues en tâches répétitives et le coût horaire moyen.
 - [FAQ](https://anthonymlns.github.io/SiteWebProxIA/#faq): Réponses aux questions fréquentes — différence avec un intégrateur, délais, prérequis techniques, confidentialité des données.
-- [Limites](https://anthonymlns.github.io/SiteWebProxIA/#limites): Cas où .kairos n'est pas le bon interlocuteur — projets nécessitant une DSI, budgets inférieurs à 500 €, refonte SI complète.
+- [Limites](https://anthonymlns.github.io/SiteWebProxIA/#limites): Cas où kAIros. n'est pas le bon interlocuteur — projets nécessitant une DSI, budgets inférieurs à 500 €, refonte SI complète.
