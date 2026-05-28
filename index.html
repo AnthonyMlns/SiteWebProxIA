@@ -261,40 +261,36 @@
     .nav-drawer {
       display: none;
       position: fixed;
-      top: 58px;
-      left: 0; right: 0;
-      bottom: 0;
-      height: calc(100vh - 58px);
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
       background: var(--white);
-      border-top: var(--border);
-      padding: 32px var(--pad-x) 48px;
       z-index: 99;
       flex-direction: column;
-      overflow-y: auto;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 32px var(--pad-x);
     }
     .nav-drawer.open {
       display: flex;
       animation: drawerIn 0.22s cubic-bezier(0.16,1,0.3,1) both;
     }
     .nav-drawer a:not(.btn) {
-      display: flex;
-      align-items: center;
       font-size: 24px;
       font-weight: 700;
       letter-spacing: -0.025em;
       color: var(--black);
       text-decoration: none;
-      padding: 18px 0;
-      border-bottom: var(--border);
+      padding: 14px 0;
       transition: color 0.15s;
     }
     .nav-drawer a:not(.btn):hover { color: var(--red); }
-    .nav-drawer a:not(.btn):last-of-type { border-bottom: none; }
     .nav-drawer .btn {
-      margin-top: auto;
-      padding-top: 0;
+      margin-top: 16px;
       justify-content: center;
       width: 100%;
+      max-width: 280px;
     }
 
     /* ============================================================
