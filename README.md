@@ -1,5 +1,8 @@
 # KairosIA — Site Web Landing Page
 
+![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-deployed-brightgreen)
+![Last Commit](https://img.shields.io/github/last-commit/AnthonyMlns/SiteWebKairosIA)
+
 Landing page pour **kAIros.**, cabinet de conseil en transformation IA pour TPE/PME françaises.
 
 > Du bon moment à la bonne action — accompagnement opérationnel, technique et pédagogique de la découverte à la mise en œuvre concrète.
