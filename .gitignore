@@ -11,3 +11,9 @@ desktop.ini
 
 # Node (si ajouté plus tard)
 node_modules/
+
+# Environment variables (local)
+.env
+
+# Sanity runtime (généré par sanity dev)
+.sanity/

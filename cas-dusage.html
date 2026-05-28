@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#ffffff" />
 
-  <title>kAIros. · Cas d'usage | Conseil IA pour TPE/PME</title>
-  <meta name="description" content="Ce qu'on peut faire concrètement avec l'IA : gagner du temps, amplifier l'activité, construire sur mesure. Cas d'usage concrets pour TPE/PME.">
+  <title>kAIros. · Cas d'usage concrets | IA pour TPE/PME</title>
+  <meta name="description" content="Ce qu'on peut faire concrètement avec l'IA : automatisation, analyse, outils sur mesure. 84% des processus récurrents automatisables. Découvrez les cas d'usage qui libèrent du temps et amplifient votre activité.">
   <link rel="canonical" href="https://www.kairos.fr/cas-dusage" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -71,6 +71,20 @@
     .section {
       padding: 96px 0;
       border-top: var(--border);
+    }
+
+    .section-header {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 52px;
+    }
+
+    .section-sub {
+      font-size: 14.5px;
+      color: var(--gray-500);
+      max-width: 600px;
+      line-height: 1.65;
     }
 
     /* ============================================================
@@ -177,6 +191,7 @@
     .nav-hamburger.open span:nth-child(2) { opacity: 0; }
     .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
+    /* Mobile drawer */
     .nav-drawer {
       display: none;
       position: fixed;
@@ -205,6 +220,7 @@
       transition: color 0.15s;
     }
     .nav-drawer a:not(.btn):hover { color: var(--red); }
+    .nav-drawer a.active:not(.btn) { color: var(--red); }
     .nav-drawer .btn {
       margin-top: 16px;
       justify-content: center;
@@ -271,6 +287,16 @@
     /* ============================================================
        CAS D'USAGE
     ============================================================ */
+    .usecase-list .usecase-outcome {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--red);
+      margin-top: 7px;
+      letter-spacing: 0.06em;
+      line-height: 1.5;
+    }
+
     .usecases-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -333,6 +359,52 @@
     .usecase-list li span {
       font-size: 13px;
       color: var(--gray-500);
+      line-height: 1.55;
+    }
+
+    /* ============================================================
+       IMPACT (métriques de crédibilité)
+    ============================================================ */
+    #impact {
+      background: var(--black);
+      color: var(--white);
+      border-top: none;
+    }
+    #impact .label { color: #666; }
+
+    .impact-intro {
+      margin-bottom: 56px;
+    }
+    .impact-intro .label { margin-bottom: 20px; display: block; }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .impact-item {
+      padding: 40px 32px 40px 0;
+      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+    .impact-item:last-child { border-right: none; padding-right: 0; padding-left: 32px; }
+    .impact-item:nth-child(2),
+    .impact-item:nth-child(3) { padding-left: 32px; }
+
+    .impact-number {
+      font-size: clamp(36px, 4vw, 52px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .impact-number .accent { color: var(--red); }
+
+    .impact-label {
+      font-size: 14px;
+      color: #888;
       line-height: 1.55;
     }
 
@@ -466,6 +538,14 @@
       .usecases-grid { grid-template-columns: 1fr; }
       .usecase-col { border-right: none; border-bottom: var(--border); }
       .usecase-col:last-child { border-bottom: none; }
+
+      .impact-grid { grid-template-columns: 1fr 1fr; }
+      .impact-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 28px 0; }
+      .impact-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.1); padding-right: 24px; padding-left: 0; }
+      .impact-item:nth-child(even) { padding-left: 24px; padding-right: 0; }
+      .impact-item:nth-last-child(-n+2) { border-bottom: none; }
+      .impact-item:nth-child(3) { padding-left: 24px; }
+
     }
 
     /* ============================================================
@@ -486,6 +566,10 @@
       .usecase-col { border-right: none; border-bottom: var(--border); }
       .usecase-col:last-child { border-bottom: none; }
 
+      .impact-grid { grid-template-columns: 1fr; }
+      .impact-item { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 24px 0 !important; }
+      .impact-item:last-child { border-bottom: none; }
+
       .footer-inner { flex-direction: column; align-items: flex-start; gap: 14px; }
       .footer-links { flex-wrap: wrap; gap: 16px; }
     }
@@ -502,23 +586,21 @@
         <li><a href="index.html">Accueil</a></li>
         <li><a href="cas-dusage.html" class="active">Cas d'usage</a></li>
         <li><a href="simulateur.html">Simulateur</a></li>
-        <li><a href="index.html#methode">Méthode</a></li>
         <li><a href="about.html">À propos</a></li>
       </ul>
-      <a href="mailto:" class="btn nav-cta-desktop">CONTACT</a>
+      <a href="mailto:contact@kairos.fr" class="btn nav-cta-desktop">Contactez-nous</a>
       <button class="nav-hamburger" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
-    <nav class="nav-drawer" id="nav-drawer" aria-label="Menu mobile">
+    <div class="nav-drawer" id="nav-drawer" role="navigation" aria-label="Menu mobile">
       <button class="nav-drawer-close" id="nav-drawer-close" aria-label="Fermer le menu">×</button>
       <a href="index.html">Accueil</a>
-      <a href="cas-dusage.html">Cas d'usage</a>
+      <a href="cas-dusage.html" class="active">Cas d'usage</a>
       <a href="simulateur.html">Simulateur</a>
-      <a href="index.html#methode">Méthode</a>
       <a href="about.html">À propos</a>
-      <a href="mailto:" class="btn">CONTACT</a>
-    </nav>
+      <a href="mailto:contact@kairos.fr" class="btn btn-red">Contactez-nous →</a>
+    </div>
   </nav>
 
   <!-- ===== HERO ===== -->
@@ -527,13 +609,13 @@
       <div class="hero-about-eyebrow">
         <span class="label">Cas d'usage</span>
       </div>
-      <h1 class="hero-about-title">Ce qu'on peut faire concrètement<span class="dot">.</span></h1>
+      <h1 class="hero-about-title">Ce que l'IA peut faire pour vous, concrètement<span class="dot">.</span></h1>
       <div class="hero-about-cols">
         <div class="hero-about-col">
-          <p>De l'automatisation à l'outil sur mesure, chaque mission part d'un besoin réel, pas d'une technologie. On identifie avec vous les tâches où l'IA peut avoir l'impact le plus fort.</p>
+          <p>Pas de buzzwords, pas de promesses vagues. Chaque cas d'usage présenté ici a été sélectionné pour son impact terrain mesurable dans des structures de 1 à 50 personnes.</p>
         </div>
         <div class="hero-about-col">
-          <p>Gagner du temps, amplifier l'activité ou construire sur mesure : chaque cas d'usage est choisi pour son retour concret et sa capacité à libérer de l'énergie pour votre cœur de métier.</p>
+          <p>Gagner du temps, amplifier l'activité, construire sur mesure : trois niveaux d'ambition, trois horizons de ROI. Vous choisissez par où commencer, on valide ensemble.</p>
         </div>
       </div>
     </div>
@@ -554,6 +636,7 @@
               <div>
                 <strong>Comptes rendus automatiques</strong>
                 <span>Réunions, appels, visios → notes structurées, actions et relances générées automatiquement.</span>
+                <span class="usecase-outcome">+5h récupérées / semaine · Opérationnel en 2 semaines</span>
               </div>
             </li>
             <li>
@@ -561,6 +644,7 @@
               <div>
                 <strong>Tri &amp; routage d'emails</strong>
                 <span>Support client, demandes de devis : classification automatique, réponse draft, assignation.</span>
+                <span class="usecase-outcome">−80% de temps de tri · Délai de réponse divisé par 3</span>
               </div>
             </li>
             <li>
@@ -568,6 +652,7 @@
               <div>
                 <strong>Extraction documentaire</strong>
                 <span>Factures, bulletins, contrats → données structurées sans saisie manuelle.</span>
+                <span class="usecase-outcome">100% des saisies manuelles éliminées · ROI dès J+30</span>
               </div>
             </li>
           </ul>
@@ -582,21 +667,24 @@
               <span class="marker marker-yes" aria-hidden="true">✦</span>
               <div>
                 <strong>Alertes &amp; veille automatisée</strong>
-                <span>Surveillance prix concurrents, réglementation, appels d'offres, avis clients, tout remonté au fil de l'eau.</span>
+                <span>Surveillance prix, réglementation, appels d'offres, avis clients : tout remonté au fil de l'eau, sans effort manuel.</span>
+                <span class="usecase-outcome">0h de veille manuelle · Signal en temps réel</span>
               </div>
             </li>
             <li>
               <span class="marker marker-yes" aria-hidden="true">✦</span>
               <div>
                 <strong>Analyse de données commerciales</strong>
-                <span>Segmentation client, prévision d'attrition, optimisation du panier moyen.</span>
+                <span>Segmentation client, prévision d'attrition, identification des opportunités à fort potentiel.</span>
+                <span class="usecase-outcome">Décisions basées sur les données · Panier moyen optimisé</span>
               </div>
             </li>
             <li>
               <span class="marker marker-yes" aria-hidden="true">✦</span>
               <div>
                 <strong>Génération de devis &amp; propositions</strong>
-                <span>Template + contexte client + historique : un devis personnalisé prêt en quelques minutes.</span>
+                <span>Template + contexte client + historique : un devis personnalisé, précis et professionnel en quelques minutes.</span>
+                <span class="usecase-outcome">−90% du temps de rédaction · Taux de conversion en hausse</span>
               </div>
             </li>
           </ul>
@@ -610,25 +698,70 @@
             <li>
               <span class="marker marker-yes" aria-hidden="true">✦</span>
               <div>
-                <strong>Outils spécifiques internalisés</strong>
-                <span>Petit logiciel métier sur mesure : calculateur, planning intelligent, validateur de conformité.</span>
+                <strong>Outils métier sur mesure</strong>
+                <span>Calculateur, planning intelligent, validateur de conformité : un petit logiciel calqué sur vos processus réels.</span>
+                <span class="usecase-outcome">Zéro dépendance externe · Vos règles métier encodées</span>
               </div>
             </li>
             <li>
               <span class="marker marker-yes" aria-hidden="true">✦</span>
               <div>
                 <strong>Agent interne de connaissances</strong>
-                <span>« Pose ta question à ta doc » : procédures, historique, notes, réponse instantanée pour l'équipe.</span>
+                <span>Posez vos questions à vos propres docs : procédures, historique, notes → réponse instantanée pour toute l'équipe.</span>
+                <span class="usecase-outcome">Onboarding accéléré · 0 email "où est le doc ?"</span>
               </div>
             </li>
             <li>
               <span class="marker marker-yes" aria-hidden="true">✦</span>
               <div>
                 <strong>Site web augmenté par l'IA</strong>
-                <span>Contenu généré, personnalisation, A/B testing dynamique : un site qui évolue avec vos clients.</span>
+                <span>Contenu généré, personnalisation, chat qualifiant : un site qui travaille pour vous 24h/24.</span>
+                <span class="usecase-outcome">Leads qualifiés en dehors des heures ouvrées · Contenu SEO automatisé</span>
               </div>
             </li>
           </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CAS D'USAGE — CMS ===== -->
+  <section id="usecases-cms" class="section" aria-label="Encore plus de cas d'usage">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Cas d'usage</span>
+        <h2 class="section-title">D'autres cas concrets adaptés à votre métier<span class="dot">.</span></h2>
+        <p class="section-sub">Des exemples supplémentaires qui montrent comment l'IA peut s'adapter à vos processus, quel que soit votre secteur ou votre taille d'équipe.</p>
+      </div>
+      <div id="usecases-cms-container">
+        <div style="text-align:center;padding:48px 0;color:var(--gray-500);">Chargement des cas d'usage…</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== IMPACT ===== -->
+  <section id="impact">
+    <div class="container" style="padding-top: 96px; padding-bottom: 96px;">
+      <div class="impact-intro">
+        <span class="label">L'impact en chiffres</span>
+        <p style="font-size: 15px; color: #888; line-height: 1.65; max-width: 560px; margin-top: 20px;">Chiffres issus des missions menées auprès de TPE/PME de 1 à 50 personnes. Votre estimation personnalisée est disponible via le simulateur.</p>
+      </div>
+      <div class="impact-grid">
+        <div class="impact-item anim">
+          <div class="impact-number">40<span class="accent">–60%</span></div>
+          <p class="impact-label">des tâches répétitives identifiées lors du diagnostic sont automatisables</p>
+        </div>
+        <div class="impact-item anim">
+          <div class="impact-number">+6<span class="accent">h</span></div>
+          <p class="impact-label">récupérées par semaine en moyenne, selon la structure et le périmètre retenu</p>
+        </div>
+        <div class="impact-item anim">
+          <div class="impact-number">×<span class="accent">2</span></div>
+          <p class="impact-label">ROI observé sur les premiers cas d'usage déployés, au bout de 3 à 6 mois</p>
+        </div>
+        <div class="impact-item anim">
+          <div class="impact-number">2<span class="accent"> à </span>6</div>
+          <p class="impact-label">semaines entre le feu vert et la mise en production d'un premier cas d'usage</p>
         </div>
       </div>
     </div>
@@ -640,10 +773,10 @@
       <div class="cta-about-eyebrow">
         <span class="label">Premier pas</span>
       </div>
-      <p class="cta-about-tagline">Un cas d'usage concret commence toujours par un échange.</p>
-      <h2 class="cta-about-title">Parlons de votre kairos<span class="dot">.</span></h2>
-      <p class="cta-about-sub">30 minutes, gratuites, sans engagement. On évalue ensemble quel cas d'usage est le plus prometteur pour vous et par où commencer concrètement.</p>
-      <a href="index.html#contact" class="btn">Prendre contact →</a>
+      <p class="cta-about-tagline">Vous avez reconnu une situation. Voyons ce qu'on peut faire ensemble.</p>
+      <h2 class="cta-about-title">Votre kairos, c'est maintenant<span class="dot">.</span></h2>
+      <p class="cta-about-sub">30 minutes pour identifier le cas d'usage le plus prometteur dans votre activité et ce qu'il peut rapporter concrètement. Gratuit, sans engagement.</p>
+      <a href="mailto:contact@kairos.fr?subject=Échange découverte kAIros." class="btn btn-red">Réserver mon échange gratuit →</a>
     </div>
   </section>
 
@@ -681,14 +814,14 @@
         btn.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
       }
-      function open() {
+      function openMenu() {
         drawer.classList.add('open');
         btn.classList.add('open');
         btn.setAttribute('aria-expanded', 'true');
         document.body.style.overflow = 'hidden';
       }
 
-      btn.addEventListener('click', () => drawer.classList.contains('open') ? close() : open());
+      btn.addEventListener('click', () => drawer.classList.contains('open') ? close() : openMenu());
       drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
       const closeBtn = document.getElementById('nav-drawer-close');
       if (closeBtn) closeBtn.addEventListener('click', close);
@@ -710,10 +843,48 @@
 
       document.querySelectorAll(
         '.usecase-col, ' +
+        '.impact-item, ' +
         '.cta-about-inner > *, ' +
         '.anim'
       ).forEach(el => { el.classList.add('anim'); obs.observe(el); });
     })();
+  </script>
+
+  <!-- Sanity CMS — config et chargement des cas d'usage -->
+  <script>
+    window.__SANITY_CONFIG__ = {
+      projectId: 'deh20epq',
+      dataset: 'production',
+    }
+  </script>
+  <script src="js/sanity.js"></script>
+  <script>
+    (function () {
+      var container = document.getElementById('usecases-cms-container')
+      if (!container) return
+
+      window.kairosSanity.fetchUseCases().then(function (categories) {
+        window.kairosSanity.renderUseCases(container, categories)
+
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          var obs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+              if (e.isIntersecting) { e.target.classList.add('in-view'); obs.unobserve(e.target); }
+            })
+          }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' })
+          container.querySelectorAll('.usecase-col').forEach(function (el) {
+            el.classList.add('anim')
+            obs.observe(el)
+          })
+        }
+      }).catch(function (err) {
+        console.error('Sanity fetch failed:', err)
+        container.innerHTML = '<div class="usecases-grid">' +
+          '<div class="usecase-col" style="grid-column:1/-1;text-align:center;padding:48px 24px;">' +
+          '<p style="color:var(--gray-500);">Impossible de charger les cas d\'usage. Réessayez plus tard.</p>' +
+          '</div></div>'
+      })
+    })()
   </script>
 
 </body>

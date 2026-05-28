@@ -151,7 +151,7 @@
       transition: color 0.15s;
     }
     .nav-links a:hover { color: var(--black); }
-    .nav-links a.active { color: var(--black); font-weight: 500; }
+    .nav-links a.active { color: var(--black); font-weight: 600; }
 
     .nav-hamburger {
       display: none;
@@ -177,6 +177,7 @@
     .nav-hamburger.open span:nth-child(2) { opacity: 0; }
     .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
+    /* Mobile drawer */
     .nav-drawer {
       display: none;
       position: fixed;
@@ -205,6 +206,7 @@
       transition: color 0.15s;
     }
     .nav-drawer a:not(.btn):hover { color: var(--red); }
+    .nav-drawer a.active:not(.btn) { color: var(--red); }
     .nav-drawer .btn {
       margin-top: 16px;
       justify-content: center;
@@ -665,7 +667,8 @@
     .anim:nth-child(6) { transition-delay: 350ms; }
 
     @media (prefers-reduced-motion: reduce) {
-      .anim, nav, .hero-about-eyebrow, .hero-about-title, .hero-about-cols, .nav-drawer.open {
+      .anim, nav, .hero-about-eyebrow, .hero-about-title, .hero-about-cols,
+      .nav-drawer.open, .nav-backdrop.open {
         animation: none !important;
         transition: none !important;
         opacity: 1 !important;
@@ -728,23 +731,21 @@
         <li><a href="index.html">Accueil</a></li>
         <li><a href="cas-dusage.html">Cas d'usage</a></li>
         <li><a href="simulateur.html">Simulateur</a></li>
-        <li><a href="index.html#methode">Méthode</a></li>
         <li><a href="about.html" class="active">À propos</a></li>
       </ul>
-      <a href="mailto:" class="btn nav-cta-desktop">CONTACT</a>
+      <a href="mailto:contact@kairos.fr" class="btn nav-cta-desktop">Contactez-nous</a>
       <button class="nav-hamburger" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
-    <nav class="nav-drawer" id="nav-drawer" aria-label="Menu mobile">
+    <div class="nav-drawer" id="nav-drawer" role="navigation" aria-label="Menu mobile">
       <button class="nav-drawer-close" id="nav-drawer-close" aria-label="Fermer le menu">×</button>
       <a href="index.html">Accueil</a>
       <a href="cas-dusage.html">Cas d'usage</a>
       <a href="simulateur.html">Simulateur</a>
-      <a href="index.html#methode">Méthode</a>
-      <a href="about.html">À propos</a>
-      <a href="mailto:" class="btn">CONTACT</a>
-    </nav>
+      <a href="about.html" class="active">À propos</a>
+      <a href="mailto:contact@kairos.fr" class="btn btn-red">Contactez-nous →</a>
+    </div>
   </nav>
 
   <!-- ===== HERO ===== -->
@@ -753,13 +754,13 @@
       <div class="hero-about-eyebrow">
         <span class="label">À propos</span>
       </div>
-      <h1 class="hero-about-title">L'IA ne manque pas d'avenir<span class="dot">.</span><br>Mais elle manque souvent de méthode.</h1>
+      <h1 class="hero-about-title">L'IA ne manque pas d'avenir<span class="dot">.</span><br>Mais elle manque souvent de méthode<span class="dot">.</span></h1>
       <div class="hero-about-cols">
         <div class="hero-about-col">
-           <p>kAIros. est né d'un constat simple : les outils d'intelligence artificielle ont atteint une maturité réelle pour les petites et moyennes structures. Mais les intégrer de façon utile, durable et adaptée au terrain, c'est une autre affaire.</p>
+          <p>kAIros. est né d'un constat simple : les outils IA ont atteint une maturité réelle, même pour une PME de 10 personnes. Mais les intégrer de façon utile et durable, c'est une autre affaire.</p>
         </div>
         <div class="hero-about-col">
-          <p>Ni cabinet de conseil à grands honoraires, ni revendeur de licences : kAIros. est une présence opérationnelle, au plus près des équipes, pour transformer le bon moment en action concrète.</p>
+          <p>Ni cabinet à grands honoraires, ni revendeur de licences. kAIros. est une présence opérationnelle, au plus près des équipes, pour transformer le bon moment en transformation concrète et durable.</p>
         </div>
       </div>
     </div>
@@ -779,15 +780,15 @@
             Le moment opportun. L'instant décisif où l'action devient possible et nécessaire. Opposé à Chronos, le temps qui passe, Kairos est le temps qui compte.
           </p>
           <div class="etym-body">
-            <p>Dans la mythologie grecque, Kairos avait une touffe de cheveux sur le devant, pour être attrapé au moment décisif, et l'arrière du crâne chauve. Une fois passé, il disparaît.</p>
-            <p>Le point dans kAIros. fait référence aux extensions de domaine. Une adresse, un territoire dans l'espace numérique, là où se joue une partie de la compétitivité des entreprises.</p>
+            <p>Dans la mythologie grecque, Kairos est représenté avec une touffe de cheveux sur le devant du crâne, pour être saisi au vol, et l'arrière entièrement chauve. Une fois passé, il n'y a plus rien à attraper. C'est l'image la plus juste de ce que vivent les dirigeants face à l'IA aujourd'hui : la fenêtre est ouverte, elle ne le restera pas.</p>
+            <p>Dans kAIros., les lettres <strong>AI</strong> apparaissent en majuscules au cœur du mot. Pas un acronyme. Pas un préfixe collé. L'intelligence artificielle n'est pas un ajout à votre activité : c'est le moment décisif qui la traverse. Le point final fait référence aux extensions de domaine, ces adresses numériques où se joue une part croissante de la compétitivité.</p>
           </div>
         </div>
         <div class="etym-right anim">
           <div class="etym-label">
             <span class="label">Vision</span>
           </div>
-          <h2 class="etym-title" style="font-size: clamp(26px, 3vw, 36px); margin-bottom: 32px;">Que chaque TPE et PME ait accès à une transformation IA qui lui ressemble.</h2>
+          <h2 class="etym-title" style="font-size: clamp(26px, 3vw, 36px); margin-bottom: 32px;">Que chaque TPE et PME ait accès à une transformation IA qui lui ressemble<span class="dot">.</span></h2>
           <div class="etym-body">
             <p>Les grandes entreprises ont des DSI, des budgets innovation, des équipes dédiées. Elles absorbent les transformations technologiques par la structure.</p>
             <p>Les petites structures, elles, n'ont ni le temps ni les ressources pour se perdre dans la technique. Elles ont besoin de quelqu'un qui comprend leur métier, pose les bonnes questions, et les aide à avancer, sans les noyer.</p>
@@ -802,22 +803,22 @@
   <section id="pourquoi">
     <div class="container" style="padding-top: 96px; padding-bottom: 96px;">
       <div style="margin-bottom: 8px;"><span class="label">Pourquoi maintenant</span></div>
-      <h2 class="pourquoi-title">La fenêtre est ouverte<span class="dot">.</span><br>Elle ne le restera pas.</h2>
+      <h2 class="pourquoi-title">La fenêtre est ouverte<span class="dot">.</span><br>Elle ne le restera pas<span class="dot">.</span></h2>
       <div class="pourquoi-grid">
         <div class="pourquoi-item anim">
           <span class="pourquoi-item-num">01</span>
           <h3>Les outils ont mûri</h3>
-          <p>Les modèles de langage, les outils d'automatisation et les interfaces no-code ont atteint un niveau d'accessibilité et de fiabilité inédit. Ce qui était réservé aux grands comptes en 2020 est désormais accessible à une PME de 10 personnes.</p>
+          <p>Modèles de langage, automatisation, no-code : le niveau d'accessibilité et de fiabilité est inédit. Ce qui nécessitait une DSI en 2020 est aujourd'hui déployable par une PME de 10 personnes en quelques semaines.</p>
         </div>
         <div class="pourquoi-item anim">
           <span class="pourquoi-item-num">02</span>
           <h3>L'écart se creuse</h3>
-          <p>Les entreprises qui adoptent l'IA dès maintenant construisent un avantage compétitif durable : productivité, réactivité commerciale, qualité de service. Celles qui attendent subiront ce delta, pas seulement en coût, mais en attractivité et en capacité d'adaptation.</p>
+          <p>Les structures qui adoptent l'IA maintenant construisent un avantage compétitif durable : productivité, réactivité, qualité de service. Dans 18 mois, cet écart sera difficile à combler. Pas seulement en coût, mais en culture et en attractivité.</p>
         </div>
         <div class="pourquoi-item anim">
           <span class="pourquoi-item-num">03</span>
           <h3>L'investissement est encore accessible</h3>
-          <p>Le rapport valeur/coût d'une mission IA n'a jamais été aussi favorable pour les petites structures. Les budgets nécessaires pour obtenir un ROI réel sont aujourd'hui atteignables, ce ne sera pas toujours le cas à mesure que le marché se consolide.</p>
+          <p>Le rapport valeur/coût n'a jamais été aussi favorable pour les petites structures. Les budgets nécessaires pour un ROI réel sont atteignables aujourd'hui. Ce sera moins vrai à mesure que le marché se consolide.</p>
         </div>
       </div>
     </div>
@@ -828,7 +829,7 @@
     <div class="container">
       <div class="diff-intro anim">
         <span class="label" style="margin-bottom: 16px;">Positionnement</span>
-        <h2 class="etym-title" style="font-size: clamp(28px, 3.5vw, 42px); margin-bottom: 0;">Ni intégrateur, ni consultant traditionnel.</h2>
+        <h2 class="etym-title" style="font-size: clamp(28px, 3.5vw, 42px); margin-bottom: 0;">Ni intégrateur, ni consultant traditionnel<span class="dot">.</span></h2>
         <p>Un tiers de confiance opérationnel, qui reste jusqu'à ce que l'équipe soit autonome.</p>
       </div>
       <div class="diff-grid">
@@ -874,7 +875,7 @@
     <div class="container">
       <div class="posture-intro anim">
         <span class="label" style="margin-bottom: 16px;">Engagements</span>
-        <h2 class="etym-title" style="font-size: clamp(28px, 3.5vw, 42px); margin-bottom: 0;">Ce qu'on s'engage à faire et à ne pas faire.</h2>
+        <h2 class="etym-title" style="font-size: clamp(28px, 3.5vw, 42px); margin-bottom: 0;">Ce qu'on s'engage à faire et à ne pas faire<span class="dot">.</span></h2>
         <p>Une posture claire dès le premier échange, pas après la signature.</p>
       </div>
       <div class="posture-grid">
@@ -947,10 +948,10 @@
       <div class="cta-about-eyebrow">
         <span class="label">Premier pas</span>
       </div>
-      <p class="cta-about-tagline">Une opportunité commence toujours par un échange.</p>
-      <h2 class="cta-about-title">Parlons de votre kairos<span class="dot">.</span></h2>
-      <p class="cta-about-sub">30 minutes, gratuites, sans engagement. On évalue ensemble si l'IA peut vous apporter une valeur réelle et par où commencer concrètement.</p>
-      <a href="index.html#contact" class="btn">Prendre contact →</a>
+      <p class="cta-about-tagline">Vous savez maintenant qui on est. Parlons de vous.</p>
+      <h2 class="cta-about-title">Votre kairos, c'est maintenant<span class="dot">.</span></h2>
+      <p class="cta-about-sub">30 minutes pour savoir si l'IA peut vraiment changer quelque chose dans votre activité et par où commencer. Gratuit, sans engagement, sans relance.</p>
+      <a href="mailto:contact@kairos.fr?subject=Échange découverte kAIros." class="btn btn-red">Réserver mon échange gratuit →</a>
     </div>
   </section>
 
@@ -988,14 +989,14 @@
         btn.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
       }
-      function open() {
+      function openMenu() {
         drawer.classList.add('open');
         btn.classList.add('open');
         btn.setAttribute('aria-expanded', 'true');
         document.body.style.overflow = 'hidden';
       }
 
-      btn.addEventListener('click', () => drawer.classList.contains('open') ? close() : open());
+      btn.addEventListener('click', () => drawer.classList.contains('open') ? close() : openMenu());
       drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
       const closeBtn = document.getElementById('nav-drawer-close');
       if (closeBtn) closeBtn.addEventListener('click', close);

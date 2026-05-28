@@ -89,7 +89,7 @@
     }
 
     .section-sub {
-      font-size: 15.5px;
+      font-size: 14.5px;
       color: var(--gray-500);
       max-width: 600px;
       line-height: 1.65;
@@ -206,6 +206,7 @@
     .nav-hamburger.open span:nth-child(2) { opacity: 0; }
     .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
+    /* Mobile drawer */
     .nav-drawer {
       display: none;
       position: fixed;
@@ -234,6 +235,7 @@
       transition: color 0.15s;
     }
     .nav-drawer a:not(.btn):hover { color: var(--red); }
+    .nav-drawer a.active:not(.btn) { color: var(--red); }
     .nav-drawer .btn {
       margin-top: 16px;
       justify-content: center;
@@ -258,29 +260,6 @@
       line-height: 1;
     }
     .nav-drawer-close:hover { color: var(--red); }
-    .nav-drawer.open {
-      display: flex;
-      animation: drawerIn 0.22s cubic-bezier(0.16,1,0.3,1) both;
-    }
-    .nav-drawer a:not(.btn) {
-      display: flex;
-      align-items: center;
-      font-size: 24px;
-      font-weight: 700;
-      letter-spacing: -0.025em;
-      color: var(--black);
-      text-decoration: none;
-      padding: 18px 0;
-      border-bottom: var(--border);
-      transition: color 0.15s;
-    }
-    .nav-drawer a:not(.btn):hover { color: var(--red); }
-    .nav-drawer a:not(.btn):last-of-type { border-bottom: none; }
-    .nav-drawer .btn {
-      margin-top: auto;
-      justify-content: center;
-      width: 100%;
-    }
 
     /* ============================================================
        HERO ABOUT
@@ -697,23 +676,21 @@
         <li><a href="index.html">Accueil</a></li>
         <li><a href="cas-dusage.html">Cas d'usage</a></li>
         <li><a href="simulateur.html" class="active">Simulateur</a></li>
-        <li><a href="index.html#methode">Méthode</a></li>
         <li><a href="about.html">À propos</a></li>
       </ul>
-      <a href="mailto:" class="btn nav-cta-desktop">CONTACT</a>
+      <a href="mailto:contact@kairos.fr" class="btn nav-cta-desktop">Contactez-nous</a>
       <button class="nav-hamburger" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
-    <nav class="nav-drawer" id="nav-drawer" aria-label="Menu mobile">
+    <div class="nav-drawer" id="nav-drawer" role="navigation" aria-label="Menu mobile">
       <button class="nav-drawer-close" id="nav-drawer-close" aria-label="Fermer le menu">×</button>
       <a href="index.html">Accueil</a>
       <a href="cas-dusage.html">Cas d'usage</a>
-      <a href="simulateur.html">Simulateur</a>
-      <a href="index.html#methode">Méthode</a>
+      <a href="simulateur.html" class="active">Simulateur</a>
       <a href="about.html">À propos</a>
-      <a href="mailto:" class="btn">CONTACT</a>
-    </nav>
+      <a href="mailto:contact@kairos.fr" class="btn btn-red">Contactez-nous →</a>
+    </div>
   </nav>
 
   <!-- ===== HERO ===== -->
@@ -722,13 +699,13 @@
       <div class="hero-about-eyebrow">
         <span class="label">Simulateur</span>
       </div>
-      <h1 class="hero-about-title">Mesurez le retour sur investissement de l'IA<span class="dot">.</span></h1>
+      <h1 class="hero-about-title">Combien vaut une heure libérée dans votre entreprise<span class="dot"> ?</span></h1>
       <div class="hero-about-cols">
         <div class="hero-about-col">
-          <p>Estimez en quelques clics le potentiel de l'IA pour votre organisation : temps libéré, économies réalisées, productivité gagnée.</p>
+          <p>Saisissez quelques paramètres sur votre organisation et obtenez en 30 secondes une estimation réaliste : heures récupérées, économies réalisées, retour sur investissement.</p>
         </div>
         <div class="hero-about-col">
-          <p>Un aperçu chiffré pour éclairer votre décision. Les résultats sont basés sur les données moyennes de votre secteur et seront précisés lors du diagnostic terrain.</p>
+          <p>Ces projections reposent sur des moyennes sectorielles observées. Le diagnostic terrain les affinera au millimètre selon votre réalité opérationnelle.</p>
         </div>
       </div>
     </div>
@@ -739,8 +716,8 @@
     <div class="container">
       <div class="section-header">
         <span class="label">Simulateur</span>
-        <h2 class="section-title">Estimez votre potentiel.</h2>
-        <p class="section-sub">Ajustez quelques paramètres pour obtenir une première estimation de ce que l'IA pourrait représenter pour votre entreprise.</p>
+        <h2 class="section-title">Votre potentiel IA en 30 secondes<span class="dot">.</span></h2>
+        <p class="section-sub">Trois paramètres, une estimation concrète. Sans inscription, sans obligation de suite.</p>
       </div>
 
       <div class="sim-panels">
@@ -748,8 +725,28 @@
         <!-- Panneau gauche -->
         <div class="sim-left">
 
-          <span class="sim-struct-label">Taille de votre structure</span>
-          <div class="sim-struct-btns" role="group" aria-label="Taille de structure">
+          <span class="sim-struct-label">Votre secteur d'activité</span>
+          <div class="sim-struct-btns" role="group" aria-label="Secteur d'activité" id="sim-sector-btns">
+            <button class="sim-struct-btn active" data-sector="services" type="button">
+              <span class="btn-size">Services</span>
+              <span class="btn-type">Conseil · RH · Juridique</span>
+            </button>
+            <button class="sim-struct-btn" data-sector="commerce" type="button">
+              <span class="btn-size">Commerce</span>
+              <span class="btn-type">Retail · E-commerce</span>
+            </button>
+            <button class="sim-struct-btn" data-sector="btp" type="button">
+              <span class="btn-size">BTP</span>
+              <span class="btn-type">Industrie · Artisanat</span>
+            </button>
+            <button class="sim-struct-btn" data-sector="sante" type="button">
+              <span class="btn-size">Santé</span>
+              <span class="btn-type">Social · Médical</span>
+            </button>
+          </div>
+
+          <span class="sim-struct-label" style="margin-top: 8px;">Taille de votre structure</span>
+          <div class="sim-struct-btns" role="group" aria-label="Taille de structure" id="sim-size-btns">
             <button class="sim-struct-btn active" data-key="s" type="button">
               <span class="btn-size">1–5</span>
               <span class="btn-type">TPE</span>
@@ -793,34 +790,34 @@
               <p class="sim-metric-val" id="sim-economie">–</p>
               <div class="sim-metric-label">
                 <strong>d'économie directe estimée / an</strong>
-                sur la base d'un taux d'automatisation estimé à 40 % des tâches identifiées
+                coût salarial des heures automatisées, basé sur votre secteur et votre taux horaire
               </div>
             </div>
             <div class="sim-metric">
               <p class="sim-metric-val" id="sim-heures">–</p>
               <div class="sim-metric-label">
                 <strong>heures récupérées par an</strong>
-                restituées à votre équipe pour des tâches à valeur ajoutée
+                restituées à votre équipe pour les tâches à vraie valeur ajoutée
               </div>
             </div>
             <div class="sim-metric">
               <p class="sim-metric-val" id="sim-gain">–</p>
               <div class="sim-metric-label">
-                <strong>Temps libéré pour le commercial</strong>
-                par mois, à réorienter vers la prospection et la relation client
+                <strong>heures libérées pour la relation client</strong>
+                par mois, à réorienter vers la prospection et le commercial
               </div>
             </div>
             <div class="sim-metric">
               <p class="sim-metric-val" id="sim-roi">–</p>
               <div class="sim-metric-label">
                 <strong>délai estimé de retour sur investissement</strong>
-                sur la base du coût indicatif d'une mission adaptée à votre structure
+                délai moyen pour rentabiliser une mission complète sur votre structure
               </div>
             </div>
           </div>
 
           <div class="sim-right-cta">
-            <a href="mailto:" class="btn btn-red">Vérifier mon potentiel exact →</a>
+            <a href="mailto:contact@kairos.fr" class="btn btn-red">Vérifier mon potentiel exact →</a>
             <p class="sim-right-note">Estimation indicative. Le diagnostic terrain précisera ces projections selon votre organisation réelle.</p>
           </div>
         </div>
@@ -835,10 +832,10 @@
       <div class="cta-about-eyebrow">
         <span class="label">Premier pas</span>
       </div>
-      <p class="cta-about-tagline">Un service concret commence toujours par un échange.</p>
-      <h2 class="cta-about-title">Parlons de votre kairos<span class="dot">.</span></h2>
-      <p class="cta-about-sub">30 minutes, gratuites, sans engagement. On évalue ensemble quel service est le plus adapté à votre situation et par où commencer concrètement.</p>
-      <a href="mailto:" class="btn">Prendre contact →</a>
+      <p class="cta-about-tagline">Vos chiffres vous ont convaincu ? Affinons-les ensemble.</p>
+      <h2 class="cta-about-title">Votre kairos, c'est maintenant<span class="dot">.</span></h2>
+      <p class="cta-about-sub">30 minutes pour valider ces projections sur votre organisation réelle et identifier le premier cas d'usage à déployer. Gratuit, sans engagement.</p>
+      <a href="mailto:contact@kairos.fr?subject=Échange découverte kAIros." class="btn btn-red">Réserver mon échange gratuit →</a>
     </div>
   </section>
 
@@ -850,7 +847,7 @@
       <ul class="footer-links" role="list">
         <li><a href="index.html#methode">Méthode</a></li>
         <li><a href="about.html">À propos</a></li>
-        <li><a href="mailto:">Contact</a></li>
+        <li><a href="mailto:contact@kairos.fr">Contact</a></li>
       </ul>
     </div>
   </footer>
@@ -876,14 +873,14 @@
         btn.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
       }
-      function open() {
+      function openMenu() {
         drawer.classList.add('open');
         btn.classList.add('open');
         btn.setAttribute('aria-expanded', 'true');
         document.body.style.overflow = 'hidden';
       }
 
-      btn.addEventListener('click', () => drawer.classList.contains('open') ? close() : open());
+      btn.addEventListener('click', () => drawer.classList.contains('open') ? close() : openMenu());
       drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
       const closeBtn = document.getElementById('nav-drawer-close');
       if (closeBtn) closeBtn.addEventListener('click', close);
@@ -917,9 +914,15 @@
         m: { collabs: 6,  commercialRate: 0.35, mission: 3000 },
         l: { collabs: 14, commercialRate: 0.40, mission: 6000 }
       };
-      const AUTO_RATE = 0.40;
+      const SECTORS = {
+        services: { autoRate: 0.42 },
+        commerce: { autoRate: 0.38 },
+        btp:      { autoRate: 0.35 },
+        sante:    { autoRate: 0.45 }
+      };
 
-      let currentKey = 's';
+      let currentKey    = 's';
+      let currentSector = 'services';
 
       const hoursInput  = document.getElementById('sim-hours');
       const rateInput   = document.getElementById('sim-rate');
@@ -929,7 +932,7 @@
       const heuresEl    = document.getElementById('sim-heures');
       const gainEl      = document.getElementById('sim-gain');
       const roiEl       = document.getElementById('sim-roi');
-      const structBtns  = document.querySelectorAll('.sim-struct-btn');
+      const structBtns  = document.querySelectorAll('#sim-size-btns .sim-struct-btn');
 
       function fmt(n) {
         return n.toLocaleString('fr-FR');
@@ -940,9 +943,10 @@
         const hours = parseInt(hoursInput.value, 10);
         const rate  = parseInt(rateInput.value, 10);
 
-        const heuresRecup  = Math.round(hours * st.collabs * 52 * AUTO_RATE);
+        const autoRate     = SECTORS[currentSector].autoRate;
+        const heuresRecup  = Math.round(hours * st.collabs * 52 * autoRate);
         const economie     = Math.round(heuresRecup * rate / 100) * 100;
-        const gainCommercial = Math.round(hours * st.collabs * AUTO_RATE * st.commercialRate * 4.33);
+        const gainCommercial = Math.round(hours * st.collabs * autoRate * st.commercialRate * 4.33);
         const roi = economie > 0
           ? Math.round((st.mission / (economie / 12)) * 10) / 10
           : null;
@@ -960,6 +964,16 @@
 
       hoursInput.addEventListener('input', () => { updateLabels(); calculate(); });
       rateInput.addEventListener('input',  () => { updateLabels(); calculate(); });
+
+      const sectorBtns = document.querySelectorAll('#sim-sector-btns .sim-struct-btn');
+      sectorBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          sectorBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentSector = btn.dataset.sector;
+          calculate();
+        });
+      });
 
       structBtns.forEach(btn => {
         btn.addEventListener('click', () => {
