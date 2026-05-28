@@ -9,9 +9,11 @@ Landing page pour **kAIros.**, cabinet de conseil en transformation IA pour TPE/
 
 ## Description
 
-Site vitrine statique (HTML/CSS/JS vanilla) avec deux pages :
-- **`index.html`** — homepage complète (hero, cible, cas d'usage, méthode, offres, simulateur ROI, FAQ, contact)
-- **`about.html`** — page À propos (équipe, étymologie, posture, engagements)
+Site vitrine statique (HTML/CSS/JS vanilla) avec quatre pages :
+- **`index.html`** — page d'accueil (hero, cible, méthode, FAQ, contact)
+- **`simulateur.html`** — simulateur de ROI IA (2 panneaux, sliders, métriques)
+- **`cas-dusage.html`** — cas d'usage concrets (3 colonnes : gagner du temps, amplifier l'activité, construire sur mesure)
+- **`about.html`** — À propos (étymologie, vision, posture, engagement, CTA)
 
 ## Stack
 
@@ -45,7 +47,9 @@ open index.html
 
 | Fichier / Dossier | Rôle |
 |---|---|
-| `index.html` | Homepage — HTML, CSS, JS en fichier unique |
+| `index.html` | Page d'accueil — HTML, CSS, JS en fichier unique |
+| `simulateur.html` | Simulateur de ROI IA |
+| `cas-dusage.html` | Cas d'usage concrets |
 | `about.html` | Page À propos |
 | `llms.txt` | Indexation LLM (llmstxt.org) |
 | `design-system.md` | Documentation du design system |
@@ -54,21 +58,17 @@ open index.html
 ## Sections — `index.html`
 
 1. Navbar sticky (logo Inter 800, drawer mobile 100vh)
-2. Hero — 100vh, centrage vertical
+2. Hero — 100vh, centrage vertical, définition étymologique
 3. Cible — pour qui / pour qui pas
-4. Cas d'usage — 9 cas concrets de ROI
-5. Méthode — 4 étapes (Comprendre · Prioriser · Expérimenter · Ancrer)
-6. Offres — 3 cartes mod box avec tarifs
-7. Simulateur ROI — 2 panneaux (sliders + métriques)
-8. FAQ — 6 questions, accordéon natif `<details>`
-9. Limites — ce que kAIros. ne fait pas
-10. Contact — CTA « Parlons de votre kairos »
-11. Footer
+4. Méthode — 4 étapes
+5. FAQ — 6 questions, accordéon natif `<details>`
+6. Contact — CTA
+7. Footer
 
 ## Roadmap
 
-- [x] **MVP** — Landing page statique avec toutes les sections
-- [ ] **v2 — Mise en production** — about.html, simulateur ROI, rebranding kAIros., déploiement GitHub Pages
+- [x] **MVP** — Landing page statique
+- [x] **v2 — Mise en production** — about.html, simulateur ROI, cas-dusage.html, rebranding kAIros., design system, déploiement GitHub Pages
 - [ ] **v2.1** — Pages services dédiées + témoignages clients
 - [ ] **v3** — Back-office CMS léger + formulaire de contact fonctionnel
 
@@ -79,7 +79,3 @@ Les contributions ne sont pas ouvertes pour le moment. Ce projet est un site vit
 ## Licence
 
 All Rights Reserved — voir le fichier [`LICENSE`](LICENSE).
-
-## Suivi
-
-Voir [Issue #2](../../issues/2) pour le détail complet des modifications de la v2 et la checklist de mise en production.
