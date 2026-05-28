@@ -67,6 +67,8 @@ start index.html
 - [x] **MVP** — Landing page statique
 - [x] **v2 — Mise en production** — about.html, simulateur ROI, cas-dusage.html, rebranding kAIros., design system, déploiement GitHub Pages
 - [ ] **v2.1** — Pages services dédiées + témoignages clients
+- [ ] **v2.2** — Rédaction de 3 cas d'usage métier détaillés (fiches contenu)
+- [ ] **v2.3** — 3 à 4 articles de blog pour asseoir le discours et la légitimité (IA, TPE/PME, méthode)
 - [ ] **v3** — Back-office CMS léger + formulaire de contact fonctionnel
 
 ## Contribuer
