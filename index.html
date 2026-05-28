@@ -560,37 +560,6 @@
     }
 
     /* ============================================================
-       LIMITES
-    ============================================================ */
-    .limits-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      border: var(--border);
-    }
-    .limit-item {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      padding: 18px 24px;
-      border-bottom: var(--border);
-      border-right: var(--border);
-      font-size: 14px;
-      color: var(--gray-700);
-      line-height: 1.5;
-    }
-    .limit-item:nth-child(2n) { border-right: none; }
-    .limit-item:nth-last-child(-n+2) { border-bottom: none; }
-    .limit-item::before {
-      content: '×';
-      font-family: var(--font-mono);
-      font-size: 13px;
-      color: var(--red);
-      flex-shrink: 0;
-      margin-top: 1px;
-      font-weight: 500;
-    }
-
-    /* ============================================================
        CONTACT
     ============================================================ */
     #contact {
@@ -740,11 +709,6 @@
       .cible-col:first-child { border-right: none; border-bottom: var(--border); }
 
       .step { grid-template-columns: 28px 1fr; gap: 14px; }
-
-      .limits-grid { grid-template-columns: 1fr; }
-      .limit-item { border-right: none !important; }
-      .limit-item:nth-last-child(-n+2) { border-bottom: var(--border); }
-      .limit-item:last-child { border-bottom: none !important; }
 
       .faq-question { padding: 18px 20px; min-height: 56px; }
       .faq-answer   { padding: 14px 20px 18px; }
@@ -954,23 +918,6 @@
     </div>
   </section>
 
-  <!-- ===== LIMITES ===== -->
-  <section id="limites" class="section" aria-label="Ce qu'on ne fait pas">
-    <div class="container">
-      <div class="section-header">
-        <span class="label">Périmètre</span>
-        <h2 class="section-title">Ce qu'on ne fait pas.</h2>
-        <p class="section-sub">La clarté fait partie de notre méthode.</p>
-      </div>
-      <div class="limits-grid" role="list">
-        <div class="limit-item" role="listitem">Grandes entreprises avec des équipes techniques en interne</div>
-        <div class="limit-item" role="listitem">Promesses de ROI chiffré à l'avance</div>
-        <div class="limit-item" role="listitem">Solutions génériques sans adaptation à votre contexte</div>
-        <div class="limit-item" role="listitem">Projets en dessous de 500 € hors formation</div>
-      </div>
-    </div>
-  </section>
-
   <!-- ===== CONTACT ===== -->
   <section id="contact" aria-label="Contact">
     <div class="contact-inner">
@@ -1009,7 +956,7 @@
 
       document.querySelectorAll(
         '.section-header, .cible-col, .step, ' +
-        '.faq-item, .limit-item, ' +
+        '.faq-item, ' +
         '.contact-inner > *'
       ).forEach(el => { el.classList.add('anim'); obs.observe(el); });
 
