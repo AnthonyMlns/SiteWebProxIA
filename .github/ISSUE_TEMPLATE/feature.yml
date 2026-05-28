@@ -1,0 +1,24 @@
+name: "User Story"
+description: "Proposition de fonctionnalité"
+title: "feat: "
+labels: ["enhancement"]
+assignees:
+  - AnthonyMlns
+body:
+  - type: textarea
+    id: story
+    attributes:
+      label: "User Story"
+      description: "En tant que... je veux... afin de..."
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: "Critères d'acceptation"
+      placeholder: "- [ ] Le bouton X fait Y"
+  - type: textarea
+    id: notes
+    attributes:
+      label: "Notes techniques / Design"
+      placeholder: "Maquette Figma, contraintes techniques, dépendances"

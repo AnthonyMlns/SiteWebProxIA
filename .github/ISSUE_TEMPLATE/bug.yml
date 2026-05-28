@@ -1,0 +1,29 @@
+name: "Bug Report"
+description: "Signaler un bug"
+title: "bug: "
+labels: ["bug"]
+assignees:
+  - AnthonyMlns
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description"
+      description: "Ce qui se passe vs ce qui devrait se passer"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: "Étapes pour reproduire"
+      placeholder: "1. Aller sur... 2. Cliquer sur..."
+  - type: input
+    id: environment
+    attributes:
+      label: "Environnement"
+      placeholder: "Navigateur, OS, résolution"
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: "Captures / Console"
+      description: "Copiez les erreurs console ou joignez une capture"
