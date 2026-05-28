@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" />
+
+  <title>kAIros. · Services | Conseil IA pour TPE/PME</title>
+  <meta name="description" content="Découvrez nos services d'accompagnement IA pour TPE/PME : méthode éprouvée en 4 étapes, offres sur mesure, simulateur de ROI pour mesurer l'impact avant de commencer.">
+  <link rel="canonical" href="https://www.kairos.fr/services" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       RESET & TOKENS
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red:      #cc2c22;
+      --black:    #0c0c0c;
+      --gray-900: #1a1a1a;
+      --gray-700: #3d3d3d;
+      --gray-500: #6b6b6b;
+      --gray-200: #e2e2e0;
+      --gray-100: #f5f5f3;
+      --white:    #ffffff;
+
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+      --border:    1px solid var(--gray-200);
+
+      --max-w: 1120px;
+      --pad-x: 48px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--white);
+      color: var(--black);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ============================================================
+       UTILITAIRES
+    ============================================================ */
+    .label {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      display: inline-block;
+    }
+
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--pad-x);
+    }
+
+    .section {
+      padding: 96px 0;
+      border-top: var(--border);
+    }
+
+    .section-header {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 52px;
+    }
+
+    .section-title {
+      font-size: clamp(26px, 3.5vw, 38px);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      color: var(--black);
+    }
+
+    .section-sub {
+      font-size: 15.5px;
+      color: var(--gray-500);
+      max-width: 600px;
+      line-height: 1.65;
+    }
+
+    /* ============================================================
+       BOUTONS
+    ============================================================ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--font-sans);
+      font-size: 13.5px;
+      font-weight: 500;
+      padding: 11px 22px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+    .btn:hover { background: var(--gray-900); }
+
+    .btn-red {
+      background: var(--red);
+      color: var(--white);
+      border-color: var(--red);
+    }
+    .btn-red:hover { background: #b02218; }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--black);
+      border: var(--border);
+    }
+    .btn-outline:hover { background: var(--gray-100); }
+
+    /* ============================================================
+       NAVIGATION
+    ============================================================ */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: var(--border);
+      transition: box-shadow 0.2s;
+    }
+    nav.scrolled { box-shadow: 0 1px 16px rgba(0,0,0,0.07); }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 58px;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--pad-x);
+    }
+
+    .nav-logo {
+      font-family: var(--font-sans);
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--black);
+      text-decoration: none;
+      letter-spacing: -0.045em;
+      flex-shrink: 0;
+    }
+    .nav-logo .dot { color: var(--red); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 13.5px;
+      color: var(--gray-500);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--black); }
+    .nav-links a.active { color: var(--black); font-weight: 500; }
+
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 36px;
+      height: 36px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-hamburger span {
+      display: block;
+      height: 1.5px;
+      background: var(--black);
+      border-radius: 1px;
+      transition: transform 0.25s, opacity 0.25s;
+      transform-origin: center;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    .nav-drawer {
+      display: none;
+      position: fixed;
+      top: 58px;
+      left: 0; right: 0;
+      bottom: 0;
+      height: calc(100vh - 58px);
+      background: var(--white);
+      border-top: var(--border);
+      padding: 32px var(--pad-x) 48px;
+      z-index: 99;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+    .nav-drawer.open {
+      display: flex;
+      animation: drawerIn 0.22s cubic-bezier(0.16,1,0.3,1) both;
+    }
+    .nav-drawer a:not(.btn) {
+      display: flex;
+      align-items: center;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: var(--black);
+      text-decoration: none;
+      padding: 18px 0;
+      border-bottom: var(--border);
+      transition: color 0.15s;
+    }
+    .nav-drawer a:not(.btn):hover { color: var(--red); }
+    .nav-drawer a:not(.btn):last-of-type { border-bottom: none; }
+    .nav-drawer .btn {
+      margin-top: auto;
+      justify-content: center;
+      width: 100%;
+    }
+
+    /* ============================================================
+       HERO ABOUT
+    ============================================================ */
+    #hero-about {
+      padding: clamp(72px, 10vh, 120px) 0 clamp(56px, 8vh, 96px);
+      border-bottom: var(--border);
+    }
+
+    .hero-about-eyebrow { margin-bottom: 36px; }
+
+    .hero-about-title {
+      font-size: clamp(42px, 6.5vw, 80px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.02;
+      color: var(--black);
+      max-width: 880px;
+      margin-bottom: 40px;
+    }
+    .hero-about-title .dot { color: var(--red); }
+
+    .hero-about-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      max-width: 880px;
+      padding-top: 40px;
+      border-top: var(--border);
+    }
+
+    .hero-about-col p {
+      font-size: 15px;
+      color: var(--gray-700);
+      line-height: 1.75;
+    }
+
+    /* ============================================================
+       MÉTHODE
+    ============================================================ */
+    .methode-steps { display: flex; flex-direction: column; }
+
+    .step {
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 22px;
+      padding: 28px 0;
+      border-bottom: var(--border);
+    }
+    .step:first-child { border-top: var(--border); }
+
+    .step-num {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--gray-500);
+      padding-top: 3px;
+      letter-spacing: 0.04em;
+    }
+    .step-body h3 {
+      font-size: 15.5px;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 7px;
+      letter-spacing: -0.01em;
+    }
+    .step-body p {
+      font-size: 13.5px;
+      color: var(--gray-500);
+      line-height: 1.65;
+      margin-bottom: 10px;
+    }
+    .step-price {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      color: var(--red);
+      letter-spacing: 0.02em;
+    }
+
+    /* ============================================================
+       OFFRES — MOD BOX
+    ============================================================ */
+    .offres-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .offre-card {
+      display: flex;
+      flex-direction: column;
+      border: var(--border);
+      background: var(--white);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      overflow: hidden;
+    }
+    .offre-card:hover {
+      border-color: var(--gray-500);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    }
+
+    .offre-card-top {
+      padding: 28px 28px 24px;
+      border-bottom: var(--border);
+    }
+
+    .offre-from {
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .offre-price {
+      font-family: var(--font-sans);
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--red);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .offre-card-icon {
+      width: 28px;
+      height: 28px;
+      color: var(--black);
+      stroke-width: 1.5;
+    }
+
+    .offre-card-body { padding: 24px 28px; flex: 1; }
+
+    .offre-card-body h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+
+    .offre-card-body p {
+      font-size: 13.5px;
+      color: var(--gray-500);
+      line-height: 1.65;
+      margin-bottom: 18px;
+    }
+
+    .offre-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .offre-features li {
+      display: flex;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--gray-700);
+      align-items: baseline;
+    }
+    .offre-features li::before {
+      content: '-';
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--gray-500);
+      flex-shrink: 0;
+    }
+
+    /* ============================================================
+       TARIFS (note)
+    ============================================================ */
+    .tarifs-note {
+      margin-top: 16px;
+      font-size: 12.5px;
+      color: var(--gray-500);
+      line-height: 1.7;
+      padding: 14px 18px;
+      background: var(--gray-100);
+      border: var(--border);
+    }
+
+    /* ============================================================
+       SIMULATEUR ROI — DEUX PANNEAUX
+    ============================================================ */
+    .sim-panels {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      border: var(--border);
+      min-height: 480px;
+    }
+
+    /* — Panneau gauche (light) — */
+    .sim-left {
+      padding: 40px 44px;
+      border-right: var(--border);
+    }
+
+    .sim-struct-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .sim-struct-btns {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .sim-struct-btn {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      padding: 12px 8px;
+      border: var(--border);
+      background: var(--white);
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s;
+      font-family: var(--font-sans);
+    }
+    .sim-struct-btn .btn-size {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--black);
+      letter-spacing: -0.02em;
+    }
+    .sim-struct-btn .btn-type {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+    }
+    .sim-struct-btn:hover {
+      border-color: var(--gray-500);
+      background: var(--gray-100);
+    }
+    .sim-struct-btn.active {
+      border-color: var(--red);
+      background: #fdf0ef;
+    }
+    .sim-struct-btn.active .btn-size { color: var(--red); }
+    .sim-struct-btn.active .btn-type { color: var(--red); }
+
+    /* Sliders */
+    .sim-slider-group { margin-bottom: 32px; }
+    .sim-slider-group:last-of-type { margin-bottom: 0; }
+
+    .sim-slider-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 10px;
+    }
+    .sim-slider-header label {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--black);
+      cursor: pointer;
+    }
+    .sim-slider-val {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--red);
+      letter-spacing: 0.01em;
+    }
+
+    .sim-range {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 2px;
+      background: var(--gray-200);
+      outline: none;
+      cursor: pointer;
+      margin-bottom: 8px;
+      border-radius: 1px;
+    }
+    .sim-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--black);
+      cursor: pointer;
+      border: 2.5px solid var(--white);
+      box-shadow: 0 0 0 1.5px var(--black);
+      transition: background 0.15s, box-shadow 0.15s;
+    }
+    .sim-range::-moz-range-thumb {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--black);
+      cursor: pointer;
+      border: 2.5px solid var(--white);
+      box-shadow: 0 0 0 1.5px var(--black);
+    }
+    .sim-range::-webkit-slider-thumb:hover {
+      background: var(--red);
+      box-shadow: 0 0 0 1.5px var(--red);
+    }
+    .sim-range-hint {
+      font-size: 12px;
+      color: var(--gray-500);
+      line-height: 1.5;
+    }
+
+    /* — Panneau droit (dark) — */
+    .sim-right {
+      background: var(--black);
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sim-right-label {
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .sim-metrics {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      flex: 1;
+    }
+
+    .sim-metric {
+      padding: 16px 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 2px;
+    }
+
+    .sim-metric-val {
+      font-family: var(--font-sans);
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: var(--red);
+      line-height: 1;
+      margin-bottom: 4px;
+      transition: all 0.3s;
+    }
+
+    .sim-metric-label {
+      font-size: 12px;
+      color: #888;
+      line-height: 1.4;
+    }
+    .sim-metric-label strong {
+      display: block;
+      font-weight: 500;
+      color: #bbb;
+      font-size: 12.5px;
+      margin-bottom: 1px;
+    }
+
+    .sim-right-cta {
+      margin-top: 24px;
+    }
+    .sim-right-cta .btn-red {
+      width: 100%;
+      justify-content: center;
+      padding: 13px 20px;
+      font-size: 13.5px;
+    }
+    .sim-right-note {
+      font-size: 11px;
+      color: #888;
+      text-align: center;
+      margin-top: 10px;
+      line-height: 1.5;
+    }
+
+    /* ============================================================
+       CTA FINAL
+    ============================================================ */
+    #cta-about {
+      background: var(--gray-100);
+      border-top: var(--border);
+      padding: 104px 0;
+    }
+
+    .cta-about-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--pad-x);
+    }
+
+    .cta-about-eyebrow { margin-bottom: 28px; }
+    .cta-about-eyebrow .label { color: var(--gray-700); }
+
+    .cta-about-tagline {
+      font-size: 13px;
+      font-style: italic;
+      color: var(--gray-700);
+      margin-bottom: 20px;
+    }
+
+    .cta-about-title {
+      font-size: clamp(34px, 5.5vw, 60px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.04;
+      color: var(--black);
+      max-width: 640px;
+      margin-bottom: 20px;
+    }
+    .cta-about-title .dot { color: var(--red); }
+
+    .cta-about-sub {
+      font-size: 15px;
+      color: var(--gray-700);
+      margin-bottom: 40px;
+      max-width: 440px;
+      line-height: 1.7;
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    footer {
+      border-top: var(--border);
+      padding: 28px 0;
+      background: var(--white);
+    }
+    .footer-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--pad-x);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .footer-logo {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--black);
+      text-decoration: none;
+      letter-spacing: -0.045em;
+    }
+    .footer-logo .dot { color: var(--red); }
+    .footer-copy { font-size: 12.5px; color: var(--gray-500); }
+    .footer-links { display: flex; gap: 22px; list-style: none; }
+    .footer-links a {
+      font-size: 12.5px;
+      color: var(--gray-500);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: var(--black); }
+
+    /* ============================================================
+       ANIMATIONS
+    ============================================================ */
+    @keyframes heroIn {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes drawerIn {
+      from { opacity: 0; transform: translateY(-8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    nav           { animation: heroIn 0.55s cubic-bezier(0.16,1,0.3,1) both; }
+    .hero-about-eyebrow { animation: heroIn 0.65s cubic-bezier(0.16,1,0.3,1) 0.06s both; }
+    .hero-about-title   { animation: heroIn 0.80s cubic-bezier(0.16,1,0.3,1) 0.13s both; }
+    .hero-about-cols    { animation: heroIn 0.65s cubic-bezier(0.16,1,0.3,1) 0.28s both; }
+
+    .anim {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.65s cubic-bezier(0.16,1,0.3,1), transform 0.65s cubic-bezier(0.16,1,0.3,1);
+    }
+    .anim.in-view { opacity: 1; transform: none; }
+    .anim:nth-child(1) { transition-delay: 0ms; }
+    .anim:nth-child(2) { transition-delay: 70ms; }
+    .anim:nth-child(3) { transition-delay: 140ms; }
+    .anim:nth-child(4) { transition-delay: 210ms; }
+    .anim:nth-child(5) { transition-delay: 280ms; }
+    .anim:nth-child(6) { transition-delay: 350ms; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .anim, nav, .hero-about-eyebrow, .hero-about-title, .hero-about-cols, .nav-drawer.open {
+        animation: none;
+        transition: none;
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* ============================================================
+       RESPONSIVE — TABLETTE (≤ 900px)
+    ============================================================ */
+    @media (max-width: 900px) {
+      :root { --pad-x: 32px; }
+
+      .hero-about-cols { grid-template-columns: 1fr; gap: 24px; }
+
+      .offres-grid { grid-template-columns: 1fr 1fr; }
+
+      .sim-panels { grid-template-columns: 1fr; }
+      .sim-left { border-right: none; border-bottom: var(--border); }
+      .sim-right { min-height: auto; }
+    }
+
+    /* ============================================================
+       RESPONSIVE — MOBILE (≤ 640px)
+    ============================================================ */
+    @media (max-width: 640px) {
+      :root { --pad-x: 20px; }
+
+      .section { padding: 56px 0; }
+
+      .nav-links, .nav-cta-desktop { display: none; }
+      .nav-hamburger { display: flex; }
+
+      #hero-about { padding: 48px 0; }
+      .hero-about-title { font-size: clamp(36px, 10vw, 52px); }
+
+      .step { grid-template-columns: 28px 1fr; gap: 14px; }
+
+      .offres-grid { grid-template-columns: 1fr; }
+
+      .sim-left { padding: 28px 24px; }
+      .sim-struct-btns { gap: 6px; }
+      .sim-struct-btn { padding: 10px 6px; }
+      .sim-right { padding: 28px 24px; }
+      .sim-metric-val { font-size: 22px; }
+
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 14px; }
+      .footer-links { flex-wrap: wrap; gap: 16px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav aria-label="Navigation principale">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">kAIros<span class="dot">.</span></a>
+      <ul class="nav-links" role="list">
+        <li><a href="cas-dusage.html">Cas d'usage</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="index.html#methode">Méthode</a></li>
+        <li><a href="about.html">À propos</a></li>
+      </ul>
+      <a href="mailto:" class="btn nav-cta-desktop">CONTACT</a>
+      <button class="nav-hamburger" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav-drawer" id="nav-drawer" aria-label="Menu mobile">
+      <a href="cas-dusage.html">Cas d'usage</a>
+      <a href="services.html">Services</a>
+      <a href="index.html#methode">Méthode</a>
+      <a href="about.html">À propos</a>
+      <a href="mailto:" class="btn">CONTACT</a>
+    </nav>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero-about">
+    <div class="container">
+      <div class="hero-about-eyebrow">
+        <span class="label">Services</span>
+      </div>
+      <h1 class="hero-about-title">Ce qu'on peut faire pour vous<span class="dot">.</span></h1>
+      <div class="hero-about-cols">
+        <div class="hero-about-col">
+          <p>De l'écoute à la mise en œuvre, chaque service est conçu pour transformer concrètement votre organisation. Pas de théorie, que de l'action mesurable.</p>
+        </div>
+        <div class="hero-about-col">
+          <p>Méthode éprouvée, offres adaptées à votre taille, simulateur de ROI pour mesurer l'impact avant de commencer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MÉTHODE ===== -->
+  <section id="methode" class="section" aria-label="Méthode en 4 étapes">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Méthode</span>
+        <h2 class="section-title">4 étapes. Pas de transformation théorique.</h2>
+        <p class="section-sub">Des actions concrètes, mesurables, menées à votre rythme.</p>
+      </div>
+      <div class="methode-steps">
+        <div class="step">
+          <span class="step-num">01</span>
+          <div class="step-body">
+            <h3>Échange &amp; découverte</h3>
+            <p>Un entretien de 30 minutes, précédé d'un court questionnaire. On évalue ensemble si l'IA est pertinente pour vous et on vous dit honnêtement où se situent vos opportunités.</p>
+            <span class="step-price">Gratuit, 30 min en visio ou en personne</span>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">02</span>
+          <div class="step-body">
+            <h3>Diagnostic terrain</h3>
+            <p>Une à deux journées dans vos locaux. On observe, on questionne, on cartographie. Livrable de 5 à 10 pages : diagnostic complet, cas d'usage prioritaires, estimation du ROI et devis d'implantation.</p>
+            <span class="step-price">500–1 000 €, dans vos locaux</span>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">03</span>
+          <div class="step-body">
+            <h3>Mise en place du 1<sup>er</sup> cas d'usage</h3>
+            <p>Sur la base du diagnostic, on concrétise le cas d'usage à plus fort retour. Chaque décision est guidée par le ROI visé : temps récupéré, coûts réduits, ressources libérées. Le devis est celui établi à l'étape 2.</p>
+            <span class="step-price">Selon devis, 2 à 6 semaines</span>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">04</span>
+          <div class="step-body">
+            <h3>Mesure &amp; optimisation</h3>
+            <p>Trois mois de suivi inclus : un point mensuel, des ajustements au fil de l'usage et un tableau de bord partagé. La continuité est possible sur abonnement, sans engagement.</p>
+            <span class="step-price">250–300 €/mois, tableau de bord inclus</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== OFFRES ===== -->
+  <section id="offres" class="section" aria-label="Offres possibles">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Offres possibles</span>
+        <h2 class="section-title">Ce qu'on met en œuvre.</h2>
+        <p class="section-sub">Définis lors du diagnostic selon vos besoins réels, pas avant.</p>
+      </div>
+      <div class="offres-grid">
+
+        <div class="offre-card">
+          <div class="offre-card-top">
+            <span class="offre-from">À partir de</span>
+            <p class="offre-price">1 000 €</p>
+            <svg class="offre-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+          </div>
+          <div class="offre-card-body">
+            <h3>Automatisations</h3>
+            <p>Identification et automatisation des tâches à faible valeur ajoutée. Les résultats se mesurent dès les premières semaines d'utilisation.</p>
+            <ul class="offre-features">
+              <li>Cartographie des tâches répétitives</li>
+              <li>Mise en place de flux de travail automatisés</li>
+              <li>Formation et prise en main des équipes</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="offre-card">
+          <div class="offre-card-top">
+            <span class="offre-from">À partir de</span>
+            <p class="offre-price">2 000 €</p>
+            <svg class="offre-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+          </div>
+          <div class="offre-card-body">
+            <h3>IA locales &amp; dédiées</h3>
+            <p>Installation d'IA spécifiques, hébergées chez l'entreprise ou son prestataire. Vos données restent sous votre contrôle.</p>
+            <ul class="offre-features">
+              <li>Hébergement sur vos serveurs ou OVH / Hostinger</li>
+              <li>Données souveraines, jamais partagées</li>
+              <li>IA configurée pour votre métier</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="offre-card">
+          <div class="offre-card-top">
+            <span class="offre-from">À partir de</span>
+            <p class="offre-price">1 500 €</p>
+            <svg class="offre-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+              <polyline points="16 18 22 12 16 6"/>
+              <polyline points="8 6 2 12 8 18"/>
+            </svg>
+          </div>
+          <div class="offre-card-body">
+            <h3>Outils sur mesure</h3>
+            <p>Intégration d'outils IA adaptés au métier et aux processus existants. On part de ce que vous utilisez déjà.</p>
+            <ul class="offre-features">
+              <li>Intégration dans vos outils existants</li>
+              <li>Développement adapté à vos processus</li>
+              <li>Documentation et support inclus</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="tarifs-note" style="margin-top:24px">
+        <strong>Gouvernance des données :</strong> vous choisissez où sont hébergées vos données, dans votre infrastructure, via OVH, Hostinger ou tout autre prestataire, selon le projet. Le coût du diagnostic est déduit du devis d'implantation si vous poursuivez avec nous.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== SIMULATEUR ROI ===== -->
+  <section id="simulateur" class="section" aria-label="Simulateur ROI">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Simulateur</span>
+        <h2 class="section-title">Estimez votre potentiel.</h2>
+        <p class="section-sub">Ajustez quelques paramètres pour obtenir une première estimation de ce que l'IA pourrait représenter pour votre entreprise.</p>
+      </div>
+
+      <div class="sim-panels">
+
+        <!-- Panneau gauche -->
+        <div class="sim-left">
+
+          <span class="sim-struct-label">Taille de votre structure</span>
+          <div class="sim-struct-btns" role="group" aria-label="Taille de structure">
+            <button class="sim-struct-btn active" data-key="s" type="button">
+              <span class="btn-size">1–5</span>
+              <span class="btn-type">TPE</span>
+            </button>
+            <button class="sim-struct-btn" data-key="m" type="button">
+              <span class="btn-size">6–20</span>
+              <span class="btn-type">Petite PME</span>
+            </button>
+            <button class="sim-struct-btn" data-key="l" type="button">
+              <span class="btn-size">21–50</span>
+              <span class="btn-type">PME</span>
+            </button>
+          </div>
+
+          <div class="sim-slider-group">
+            <div class="sim-slider-header">
+              <label for="sim-hours">Heures perdues en tâches répétitives / semaine / collaborateur</label>
+              <span class="sim-slider-val" id="sim-hours-val">3h</span>
+            </div>
+            <input type="range" id="sim-hours" class="sim-range" min="1" max="20" step="1" value="3" aria-label="Heures perdues par semaine" />
+            <p class="sim-range-hint">Emails, saisies, relances, tableaux Excel... La plupart des PME sous-estiment ce chiffre.</p>
+          </div>
+
+          <div class="sim-slider-group">
+            <div class="sim-slider-header">
+              <label for="sim-rate">Coût horaire chargé moyen</label>
+              <span class="sim-slider-val" id="sim-rate-val">25 €/h</span>
+            </div>
+            <input type="range" id="sim-rate" class="sim-range" min="20" max="80" step="2" value="25" aria-label="Coût horaire moyen" />
+            <p class="sim-range-hint">Coût total employeur = salaire brut × 1,45. Prenez la moyenne des collaborateurs concernés.</p>
+          </div>
+
+        </div>
+
+        <!-- Panneau droit -->
+        <div class="sim-right" aria-live="polite" aria-label="Résultats estimés">
+          <span class="sim-right-label">Votre potentiel estimé / an</span>
+
+          <div class="sim-metrics">
+            <div class="sim-metric">
+              <p class="sim-metric-val" id="sim-economie">–</p>
+              <div class="sim-metric-label">
+                <strong>d'économie directe estimée / an</strong>
+                sur la base d'un taux d'automatisation estimé à 40 % des tâches identifiées
+              </div>
+            </div>
+            <div class="sim-metric">
+              <p class="sim-metric-val" id="sim-heures">–</p>
+              <div class="sim-metric-label">
+                <strong>heures récupérées par an</strong>
+                restituées à votre équipe pour des tâches à valeur ajoutée
+              </div>
+            </div>
+            <div class="sim-metric">
+              <p class="sim-metric-val" id="sim-gain">–</p>
+              <div class="sim-metric-label">
+                <strong>Temps libéré pour le commercial</strong>
+                par mois, à réorienter vers la prospection et la relation client
+              </div>
+            </div>
+            <div class="sim-metric">
+              <p class="sim-metric-val" id="sim-roi">–</p>
+              <div class="sim-metric-label">
+                <strong>délai estimé de retour sur investissement</strong>
+                sur la base du coût indicatif d'une mission adaptée à votre structure
+              </div>
+            </div>
+          </div>
+
+          <div class="sim-right-cta">
+            <a href="mailto:" class="btn btn-red">Vérifier mon potentiel exact →</a>
+            <p class="sim-right-note">Estimation indicative. Le diagnostic terrain précisera ces projections selon votre organisation réelle.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section id="cta-about">
+    <div class="cta-about-inner">
+      <div class="cta-about-eyebrow">
+        <span class="label">Premier pas</span>
+      </div>
+      <p class="cta-about-tagline">Un service concret commence toujours par un échange.</p>
+      <h2 class="cta-about-title">Parlons de votre kairos<span class="dot">.</span></h2>
+      <p class="cta-about-sub">30 minutes, gratuites, sans engagement. On évalue ensemble quel service est le plus adapté à votre situation et par où commencer concrètement.</p>
+      <a href="mailto:" class="btn">Prendre contact →</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-inner">
+      <a href="index.html" class="footer-logo">kAIros<span class="dot">.</span></a>
+      <p class="footer-copy">© 2026 kAIros. Conseil IA pour TPE/PME</p>
+      <ul class="footer-links" role="list">
+        <li><a href="index.html#methode">Méthode</a></li>
+        <li><a href="about.html">À propos</a></li>
+        <li><a href="mailto:">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    /* ===== NAV SCROLL ===== */
+    (function () {
+      const nav = document.querySelector('nav');
+      window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 10);
+      }, { passive: true });
+    })();
+
+    /* ===== HAMBURGER ===== */
+    (function () {
+      const btn    = document.getElementById('nav-toggle');
+      const drawer = document.getElementById('nav-drawer');
+      if (!btn || !drawer) return;
+
+      function close() {
+        drawer.classList.remove('open');
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+      function open() {
+        drawer.classList.add('open');
+        btn.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+
+      btn.addEventListener('click', () => drawer.classList.contains('open') ? close() : open());
+      drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+    })();
+
+    /* ===== ANIMATION SCROLL ===== */
+    (function () {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('in-view');
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+
+      document.querySelectorAll(
+        '.section-header, .step, .offre-card, ' +
+        '.tarifs-note, ' +
+        '.sim-left, .sim-right'
+      ).forEach(el => { el.classList.add('anim'); obs.observe(el); });
+    })();
+
+    /* ===== SIMULATEUR ROI ===== */
+    (function () {
+      const STRUCTURES = {
+        s: { collabs: 2,  commercialRate: 0.30, mission: 1500 },
+        m: { collabs: 6,  commercialRate: 0.35, mission: 3000 },
+        l: { collabs: 14, commercialRate: 0.40, mission: 6000 }
+      };
+      const AUTO_RATE = 0.40;
+
+      let currentKey = 's';
+
+      const hoursInput  = document.getElementById('sim-hours');
+      const rateInput   = document.getElementById('sim-rate');
+      const hoursVal    = document.getElementById('sim-hours-val');
+      const rateVal     = document.getElementById('sim-rate-val');
+      const economieEl  = document.getElementById('sim-economie');
+      const heuresEl    = document.getElementById('sim-heures');
+      const gainEl      = document.getElementById('sim-gain');
+      const roiEl       = document.getElementById('sim-roi');
+      const structBtns  = document.querySelectorAll('.sim-struct-btn');
+
+      function fmt(n) {
+        return n.toLocaleString('fr-FR');
+      }
+
+      function calculate() {
+        const st    = STRUCTURES[currentKey];
+        const hours = parseInt(hoursInput.value, 10);
+        const rate  = parseInt(rateInput.value, 10);
+
+        const heuresRecup  = Math.round(hours * st.collabs * 52 * AUTO_RATE);
+        const economie     = Math.round(heuresRecup * rate / 100) * 100;
+        const gainCommercial = Math.round(hours * st.collabs * AUTO_RATE * st.commercialRate * 4.33);
+        const roi = economie > 0
+          ? Math.round((st.mission / (economie / 12)) * 10) / 10
+          : null;
+
+        economieEl.textContent = economie > 0 ? fmt(economie) + ' €' : '-';
+        heuresEl.textContent   = heuresRecup > 0 ? heuresRecup + ' h' : '-';
+        gainEl.textContent     = gainCommercial + ' h/mois';
+        roiEl.textContent      = roi ? roi + ' mois' : '-';
+      }
+
+      function updateLabels() {
+        hoursVal.textContent = hoursInput.value + 'h';
+        rateVal.textContent  = rateInput.value + ' €/h';
+      }
+
+      hoursInput.addEventListener('input', () => { updateLabels(); calculate(); });
+      rateInput.addEventListener('input',  () => { updateLabels(); calculate(); });
+
+      structBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          structBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentKey = btn.dataset.key;
+
+          const defaults = { s: [3, 25], m: [5, 28], l: [8, 32] };
+          hoursInput.value = defaults[currentKey][0];
+          rateInput.value  = defaults[currentKey][1];
+          updateLabels();
+          calculate();
+        });
+      });
+
+      updateLabels();
+      calculate();
+    })();
+  </script>
+
+</body>
+</html>
