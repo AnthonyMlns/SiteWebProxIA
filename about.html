@@ -512,11 +512,17 @@
       background: var(--gray-100);
       border: var(--border);
       border-radius: 2px;
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-direction: column;
-      gap: 12px;
+    }
+
+    .equipe-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .equipe-photo-placeholder {
@@ -914,16 +920,16 @@
       </div>
       <div class="equipe-grid">
         <div class="equipe-photo anim">
-          <span class="equipe-photo-placeholder">Photo à venir</span>
+          <img src="images/Anthony%20Milans%20-%20Profil.png" alt="Anthony Milans — kAIros." loading="lazy" />
         </div>
         <div class="anim">
-          <h2 class="equipe-name">Anthony M.</h2>
+          <h2 class="equipe-name">Anthony Milans</h2>
           <span class="equipe-role">Co-fondateur · kAIros.</span>
           <p class="equipe-bio">
-            Quelques lignes sur le parcours d'Anthony, son expérience, et ce qui l'a conduit à co-créer kAIros. À compléter avec les infos réelles.
+            Anthony accompagne les TPE/PME dans leur transformation par l'IA avec une approche opérationnelle et pragmatique. Son expérience terrain lui permet d'identifier rapidement les leviers à fort impact et de les concrétiser.
           </p>
           <p class="equipe-detail">
-            Zone géographique d'intervention · Secteurs de prédilection · Formations ou certifications notables.
+            Montpellier, Occitanie · TPE/PME tous secteurs · Conseil en transformation IA
           </p>
         </div>
       </div>
