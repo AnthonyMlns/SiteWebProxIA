@@ -1,5 +1,5 @@
 name: "Bug Report"
-description: "Signaler un bug sur le site"
+description: "Signaler un bug sur le site kAIros."
 title: "bug: "
 labels: ["bug"]
 assignees:
@@ -21,12 +21,17 @@ body:
     id: page
     attributes:
       label: "Page concernée"
-      placeholder: "index.html, simulateur.html, cas-dusage.html..."
-  - type: input
+      placeholder: "index.html, simulateur.html, cas-dusage.html, contact.html..."
+  - type: dropdown
     id: environment
     attributes:
       label: "Environnement"
-      placeholder: "Navigateur, OS, résolution"
+      options:
+        - Desktop
+        - Mobile
+        - Tablette
+    validations:
+      required: true
   - type: textarea
     id: screenshot
     attributes:

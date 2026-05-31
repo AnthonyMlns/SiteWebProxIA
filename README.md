@@ -1,6 +1,6 @@
 # kAIros. — Site Web Landing Page
 
-![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-deployed-brightgreen)
+![GitHub Pages](https://img.shields.io/badge/Vercel-deployed-brightgreen)
 ![Last Commit](https://img.shields.io/github/last-commit/AnthonyMlns/SiteWebKairosIA-live)
 
 Landing page pour **kAIros.**, cabinet de conseil en transformation IA pour TPE/PME françaises.
@@ -9,27 +9,25 @@ Landing page pour **kAIros.**, cabinet de conseil en transformation IA pour TPE/
 
 ## Description
 
-Site vitrine statique (HTML/CSS/JS vanilla) avec cinq pages, alimenté dynamiquement via **Sanity CMS** pour les cas d'usage :
+Site vitrine statique (HTML/CSS/JS vanilla) avec **6 pages**, alimenté dynamiquement via **Sanity CMS** :
 
-- **`index.html`** — page d'accueil (hero, cible, méthode, FAQ, contact)
+- **`index.html`** — page d'accueil (hero avec image, cible, méthode avec image, FAQ)
 - **`simulateur.html`** — simulateur de ROI IA (2 panneaux, sliders, métriques)
 - **`cas-dusage.html`** — cas d'usage concrets (3 colonnes statiques + section dynamique via Sanity)
-- **`about.html`** — À propos (étymologie, vision, posture, engagement, CTA)
+- **`about.html`** — À propos (étymologie, vision, posture, équipe avec photo)
+- **`contact.html`** — Page contact dédiée (formulaire → Sanity, image-4, infos)
 - **`404.html`** — page d'erreur personnalisée (404)
 
 ## Stack
 
 - **Frontend** : HTML/CSS/JS vanilla
 - **CMS** : Sanity (`sanity/`) — headless CMS, projectId `deh20epq`, dataset `production`
+- **Studio** : Déployé sur `kairos-ia.sanity.studio`
+- **Hébergement** : Vercel (Speed Insights + Analytics)
 - **Design system** : tokens CSS (variables) · [`design-system.md`](design-system.md) · `#cc2c22` rouge accent · Inter 800 (titres) + JetBrains Mono (labels)
 - **SEO** : schema.org JSON-LD (Organization, LocalBusiness, ProfessionalService) · Open Graph · Twitter Card · `llms.txt`
-- **Responsive** : hamburger menu mobile full-screen · breakpoints 900 px / 640 px
+- **Responsive** : hamburger menu mobile full-screen · breakpoints 900 px / 640 px · images en background sur mobile
 - **Animations** : `heroIn` page-load stagger · IntersectionObserver scroll · `prefers-reduced-motion`
-
-## Prérequis
-
-- Un navigateur web moderne (Chrome, Firefox, Safari, Edge)
-- Node.js 18+ pour Sanity Studio
 
 ## Installation
 
@@ -41,11 +39,7 @@ cd SiteWebKairosIA-live
 ### Lancer le site
 
 ```bash
-# Serveur local (nécessaire pour le fetch Sanity)
 npx serve .
-
-# Ou via Python
-python -m http.server 8000
 ```
 
 ### Lancer Sanity Studio
@@ -56,25 +50,30 @@ npm install
 npm run dev
 ```
 
-Configurez votre `.env` à partir de `.env.example` :
-
-```env
-SANITY_PROJECT_ID=deh20epq
-SANITY_DATASET=production
-SANITY_TOKEN=votre_read_token
-```
+Configurez votre `.env` à partir de `.env.example`.
 
 ## Structure du projet
 
 ```
-├── index.html              # Accueil — hero, cible, méthode, FAQ, contact
-├── about.html              # À propos — étymologie, vision, posture
+├── index.html              # Accueil — hero + image, cible, méthode + image, FAQ
+├── about.html              # À propos — étymologie, vision, posture, équipe + photo
 ├── cas-dusage.html         # Cas d'usage (statique + dynamique Sanity)
 ├── simulateur.html         # Simulateur de ROI IA
+├── contact.html            # Contact — formulaire → Sanity + image-4
 ├── 404.html                # Page d'erreur personnalisée
 │
+├── images/                 # Images du site
+│   ├── image-1.png         # Hero section
+│   ├── image-2.png         # Méthode section
+│   ├── image-4.png         # Contact page
+│   └── Anthony Milans - Profil.png
+│
 ├── js/
-│   └── sanity.js           # Client Sanity CDN (fetch + render)
+│   ├── sanity.js           # Client Sanity CDN (fetch + render)
+│   └── contact.js          # Formulaire de contact (POST → /api/contact)
+│
+├── api/
+│   └── contact.js          # Vercel Function → écrit dans Sanity
 │
 ├── sanity/                 # Sanity CMS Studio
 │   ├── package.json
@@ -82,11 +81,12 @@ SANITY_TOKEN=votre_read_token
 │   ├── sanity.config.js
 │   └── schemas/
 │       ├── index.js
-│       └── useCaseCategory.js   # Schéma : catégorie de cas d'usage
+│       ├── useCaseCategory.js    # Schéma : catégorie de cas d'usage
+│       └── contactSubmission.js  # Schéma : soumissions formulaire
 │
-├── design-system.md        # Tokens et principes du design system
-├── llms.txt                # Indexation LLM
-├── .env.example            # Variables d'environnement Sanity
+├── design-system.md
+├── llms.txt
+├── .env.example
 ├── LICENSE
 └── README.md
 ```
@@ -94,13 +94,15 @@ SANITY_TOKEN=votre_read_token
 ## Roadmap
 
 - [x] **MVP** — Landing page statique
-- [x] **v2 — Mise en production** — about.html, simulateur ROI, cas-dusage.html, rebranding kAIros., design system, GitHub Pages
-- [x] **v2.1** — Page 404, animations unifiées, navigation simplifiée (Accueil, Cas d'usage, Simulateur, À propos)
-- [x] **v3 — Sanity CMS** — Intégration Sanity, schéma useCaseCategory, chargement dynamique des cas d'usage
-- [ ] **Blog** — Schéma Sanity + page blog dédiée avec articles
+- [x] **v2** — about.html, simulateur ROI, cas-dusage.html, rebranding kAIros., design system, déploiement
+- [x] **v2.1** — Page 404, animations unifiées, navigation simplifiée (4 liens)
+- [x] **v3 — Sanity CMS** — Intégration Sanity, schéma useCaseCategory, chargement dynamique
+- [x] **v3.1 — Images** — Hero + méthode + contact visuels, responsive background mobile
+- [x] **v3.2 — Formulaire de contact** — Page contact dédiée, Vercel Function, schéma contactSubmission
+- [x] **v3.3 — Studio en ligne** — Déploiement Sanity Studio sur kairos-ia.sanity.studio
+- [ ] **Blog** — Schéma Sanity `post` + page blog dédiée
 - [ ] **Témoignages clients** — Section témoignages dynamiques via Sanity
 - [ ] **Services dédiés** — Pages services individuelles
-- [ ] **Formulaire de contact** — Formulaire fonctionnel (au lieu du simple mailto)
 - [ ] **Contenu rédactionnel** — 3 articles de blog, cas d'usage métier détaillés
 
 ## Contribuer
