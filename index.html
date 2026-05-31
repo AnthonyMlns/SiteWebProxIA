@@ -341,6 +341,28 @@
       justify-content: center;
     }
 
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-image-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: auto;
+      max-height: 70vh;
+      object-fit: contain;
+      display: block;
+      border-radius: 4px;
+    }
+
     .hero-eyebrow { margin-bottom: 30px; }
 
     .hero-title {
@@ -474,6 +496,29 @@
     /* ============================================================
        MÉTHODE
     ============================================================ */
+    .methode-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: stretch;
+    }
+
+    .methode-image-wrapper {
+      display: flex;
+      align-items: stretch;
+    }
+
+    .methode-image {
+      width: 100%;
+      height: 100%;
+      max-height: 100vh;
+      object-fit: cover;
+      display: block;
+      border-radius: 4px;
+      position: sticky;
+      top: 80px;
+    }
+
     .methode-steps { display: flex; flex-direction: column; }
 
     .step {
@@ -691,6 +736,16 @@
     ============================================================ */
     @media (max-width: 900px) {
       :root { --pad-x: 32px; }
+
+      .hero-grid { grid-template-columns: 1fr; gap: 0; position: relative; }
+      .hero-image-wrapper { position: absolute; inset: 0; z-index: 0; overflow: hidden; border-radius: 4px; }
+      .hero-image { width: 100%; height: 100%; max-height: none; object-fit: cover; opacity: 0.15; }
+      .hero-body { position: relative; z-index: 1; padding: 32px 0; }
+
+      .methode-grid { grid-template-columns: 1fr; gap: 0; position: relative; }
+      .methode-image-wrapper { position: absolute; inset: 0; z-index: 0; overflow: hidden; border-radius: 4px; }
+      .methode-image { position: static; height: 100%; max-height: none; object-fit: cover; opacity: 0.15; }
+      .methode-steps { position: relative; z-index: 1; padding: 32px 0; }
     }
 
     @media (max-width: 640px) {
@@ -753,23 +808,28 @@
   <!-- ===== HERO ===== -->
   <section id="hero" aria-label="Introduction">
     <div class="hero-inner">
-      <div class="hero-body">
-        <div class="hero-eyebrow">
-          <span class="label">Transformation &amp; optimisation des TPE/PME par l'IA</span>
+      <div class="hero-grid">
+        <div class="hero-body">
+          <div class="hero-eyebrow">
+            <span class="label">Transformation &amp; optimisation des TPE/PME par l'IA</span>
+          </div>
+          <h1 class="hero-title">kAIros<span class="dot">.</span></h1>
+          <p class="hero-etym-def">/kaï.ʁos/, n.m., grec ancien · Le moment opportun. L'instant décisif où l'action devient possible et nécessaire. Opposé à Chronos, le temps qui passe, Kairos est le temps qui compte.</p>
+          <p class="hero-headline">Accompagnement opérationnel, technique et pédagogique. De la découverte à la mise en œuvre concrète.</p>
+          <ul class="hero-list" role="list">
+            <li>automatisation des processus</li>
+            <li>analyse de données récurrentes</li>
+            <li>tâches répétitives</li>
+            <li>workflows, alertes, notifications intelligentes</li>
+            <li>…etc</li>
+          </ul>
+          <div class="hero-cta">
+            <a href="#contact" class="btn">Premier échange gratuit</a>
+            <a href="#methode" class="btn btn-outline">Voir la méthode</a>
+          </div>
         </div>
-        <h1 class="hero-title">kAIros<span class="dot">.</span></h1>
-        <p class="hero-etym-def">/kaï.ʁos/, n.m., grec ancien · Le moment opportun. L'instant décisif où l'action devient possible et nécessaire. Opposé à Chronos, le temps qui passe, Kairos est le temps qui compte.</p>
-        <p class="hero-headline">Accompagnement opérationnel, technique et pédagogique. De la découverte à la mise en œuvre concrète.</p>
-        <ul class="hero-list" role="list">
-          <li>automatisation des processus</li>
-          <li>analyse de données récurrentes</li>
-          <li>tâches répétitives</li>
-          <li>workflows, alertes, notifications intelligentes</li>
-          <li>…etc</li>
-        </ul>
-        <div class="hero-cta">
-          <a href="#contact" class="btn">Premier échange gratuit</a>
-          <a href="#methode" class="btn btn-outline">Voir la méthode</a>
+        <div class="hero-image-wrapper">
+          <img src="images/image-1.png" alt="kAIros. — Intelligence artificielle pour TPE/PME" class="hero-image" loading="eager" />
         </div>
       </div>
       <blockquote class="hero-quote" aria-label="Notre posture">
@@ -816,7 +876,11 @@
         <h2 class="section-title">Quelle est notre méthode de transformation ?</h2>
         <p class="section-sub">Une méthode en 4 étapes, à votre rythme, avec des actions concrètes et mesurables.</p>
       </div>
-      <div class="methode-steps">
+      <div class="methode-grid">
+        <div class="methode-image-wrapper">
+          <img src="images/image-2.png" alt="Méthode kAIros. — Transformation IA étape par étape" class="methode-image" loading="lazy" />
+        </div>
+        <div class="methode-steps">
         <div class="step">
           <span class="step-num">01</span>
           <div class="step-body">
@@ -849,6 +913,7 @@
             <span class="step-output">Ajustements mensuels et suivi des résultats</span>
           </div>
         </div>
+      </div>
       </div>
     </div>
   </section>
