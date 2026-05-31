@@ -7,8 +7,8 @@
   <meta name="author" content="kAIros." />
   <meta name="format-detection" content="telephone=no" />
 
-  <title>kAIros. · Le bon moment pour passer à l'IA | Conseil IA TPE/PME</title>
-  <meta name="description" content="kAIros. accompagne les TPE/PME dans leur transformation par l'IA : du diagnostic terrain à la mise en œuvre, sans pitch, sans solution clé en main. Un échange gratuit pour commencer.">
+  <title>kAIros. · Transformation IA pour TPE/PME | Consultant IA Sud de la France</title>
+  <meta name="description" content="kAIros. accompagne les TPE/PME dans la transformation par l'IA : accompagnement opérationnel, technique et pédagogique de la découverte à la mise en œuvre concrète.">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="keywords" content="consultant IA PME, intelligence artificielle PME, conseil IA Montpellier, IA TPE Occitanie, automatisation PME, transformation IA entreprise, diagnostic IA, déploiement IA, IA locale PME">
   <link rel="canonical" href="https://www.kairos.fr/" />
@@ -16,8 +16,8 @@
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:site_name" content="kAIros." />
-  <meta property="og:title" content="kAIros. · Le bon moment pour passer à l'IA" />
-  <meta property="og:description" content="On ne vous vend pas une IA clé en main. On construit avec vous la transformation qui a du sens pour votre activité. Échange gratuit de 30 minutes." />
+  <meta property="og:title" content="kAIros. · Transformation &amp; optimisation des TPE/PME par l'IA" />
+  <meta property="og:description" content="Accompagnement opérationnel, technique et pédagogique : de la découverte à la mise en œuvre concrète. Échange découverte gratuit." />
   <meta property="og:url" content="https://www.kairos.fr/" />
   <meta property="og:image" content="https://www.kairos.fr/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
@@ -25,7 +25,7 @@
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="kAIros. · Transformation IA pour TPE/PME" />
-  <meta name="twitter:description" content="kAIros. Le bon moment pour passer à l'IA. Diagnostic, mise en œuvre, formation. Sans engagement." />
+  <meta name="twitter:description" content="Accompagnement opérationnel, technique et pédagogique : de la découverte à la mise en œuvre concrète." />
   <meta name="twitter:image" content="https://www.kairos.fr/og-image.jpg" />
 
   <meta name="geo.region" content="FR-OCC" />
@@ -44,7 +44,7 @@
       "@type": ["Organization","LocalBusiness","ProfessionalService"],
       "@id": "https://www.kairos.fr/#organization",
       "name": "kAIros.",
-      "description": "Le bon moment pour passer à l'IA. Diagnostic, mise en œuvre, formation, sans clé en main, sans engagement.",
+      "description": "Accompagnement opérationnel, technique et pédagogique à la transformation IA des TPE/PME.",
       "url": "https://www.kairos.fr",
       "email": "contact@kairos.fr",
       "priceRange": "€€",
@@ -120,7 +120,7 @@
     }
 
     .section {
-      padding: 96px 0;
+      padding: 88px 0;
       border-top: var(--border);
     }
 
@@ -140,7 +140,7 @@
     }
 
     .section-sub {
-      font-size: 14.5px;
+      font-size: 15.5px;
       color: var(--gray-500);
       max-width: 600px;
       line-height: 1.65;
@@ -231,7 +231,6 @@
       transition: color 0.15s;
     }
     .nav-links a:hover { color: var(--black); }
-    .nav-links a.active { color: var(--black); font-weight: 600; }
 
     /* Hamburger */
     .nav-hamburger {
@@ -258,7 +257,7 @@
     .nav-hamburger.open span:nth-child(2) { opacity: 0; }
     .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
-    /* Mobile drawer */
+    /* Mobile drawer — full screen */
     .nav-drawer {
       display: none;
       position: fixed;
@@ -287,7 +286,6 @@
       transition: color 0.15s;
     }
     .nav-drawer a:not(.btn):hover { color: var(--red); }
-    .nav-drawer a.active:not(.btn) { color: var(--red); }
     .nav-drawer .btn {
       margin-top: 16px;
       justify-content: center;
@@ -319,22 +317,8 @@
     #hero {
       min-height: calc(100vh - 58px);
       display: flex;
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 85% 30%, rgba(204,44,34,0.04) 0%, transparent 50%),
-        radial-gradient(circle at 15% 70%, rgba(204,44,34,0.025) 0%, transparent 50%),
-        var(--white);
-    }
-
-    #hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(var(--gray-200) 1px, transparent 0);
-      background-size: 32px 32px;
-      opacity: 0.35;
-      pointer-events: none;
+      flex-direction: column;
+      padding: clamp(48px, 7vh, 88px) 0 0;
     }
 
     .hero-inner {
@@ -342,11 +326,9 @@
       max-width: var(--max-w);
       width: 100%;
       margin: 0 auto;
-      padding: 0 var(--pad-x);
+      padding: 0 var(--pad-x) clamp(36px, 5vh, 56px);
       display: flex;
       flex-direction: column;
-      position: relative;
-      z-index: 1;
     }
 
     .hero-body {
@@ -354,204 +336,176 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: clamp(48px, 7vh, 88px) 0;
     }
 
-    .hero-eyebrow { margin-bottom: 32px; }
+    .hero-eyebrow { margin-bottom: 30px; }
 
     .hero-title {
-      font-size: clamp(42px, 5.5vw, 68px);
+      font-family: var(--font-sans);
+      font-size: clamp(64px, 11vw, 116px);
       font-weight: 800;
-      letter-spacing: -0.04em;
-      line-height: 1.08;
+      letter-spacing: -0.045em;
+      line-height: 0.92;
       color: var(--black);
-      margin-bottom: 22px;
-      max-width: 800px;
+      margin-bottom: 32px;
     }
-    .hero-title .accent { color: var(--red); }
+    .hero-title .dot { color: var(--red); }
+
+    .hero-headline {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--black);
+      max-width: 600px;
+      line-height: 1.45;
+      margin-bottom: 10px;
+    }
 
     .hero-tagline {
-      font-size: 16.5px;
-      color: var(--gray-700);
-      max-width: 560px;
+      font-size: 15px;
+      color: var(--gray-500);
+      max-width: 600px;
       line-height: 1.7;
-      margin-bottom: 38px;
+      margin-bottom: 18px;
     }
 
     .hero-cta {
       display: flex;
-      gap: 12px;
+      gap: 10px;
       align-items: center;
       flex-wrap: wrap;
-      margin-bottom: 48px;
     }
 
     .hero-quote {
       width: 100%;
       padding: 24px 0;
       border-top: var(--border);
-      display: flex;
-      gap: 18px;
-      align-items: flex-start;
-    }
-    .hero-quote-icon {
-      flex-shrink: 0;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: var(--gray-100);
-      display: flex;
+      border-bottom: var(--border);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 24px;
       align-items: center;
-      justify-content: center;
+    }
+.hero-etym-def {
+  font-size: 14px;
+  color: var(--gray-500);
+  line-height: 1.6;
+  max-width: 600px;
+  margin-bottom: 24px;
+  padding-left: 16px;
+  border-left: 2px solid var(--gray-200);
+}
+
+.hero-quote-label {
       font-family: var(--font-mono);
-      font-size: 12px;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
       color: var(--gray-500);
-      margin-top: 2px;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
     }
     .hero-quote p {
-      font-size: 14.5px;
+      font-size: 16px;
       font-style: italic;
-      color: var(--gray-500);
+      color: var(--gray-700);
       line-height: 1.7;
-      max-width: 600px;
     }
 
-    /* ============================================================
-       TRUST BAR
-    ============================================================ */
-    .trust-bar {
-      border-top: var(--border);
-      border-bottom: var(--border);
-      padding: 28px 0;
-      background: var(--gray-100);
-    }
-    .trust-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-    }
-    .trust-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 0 20px;
-      border-right: var(--border);
-    }
-    .trust-item:last-child { border-right: none; }
-    .trust-num {
-      font-size: clamp(20px, 2.5vw, 26px);
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      color: var(--black);
-      line-height: 1.1;
-    }
-    .trust-label {
-      font-size: 12px;
-      color: var(--gray-500);
-      margin-top: 5px;
-      line-height: 1.45;
-      max-width: 130px;
-    }
+.hero-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 28px;
+}
+.hero-list li {
+  font-size: 14px;
+  color: var(--gray-500);
+  line-height: 1.55;
+  padding-left: 14px;
+  position: relative;
+}
+.hero-list li::before {
+  content: '-';
+  position: absolute;
+  left: 0;
+  color: var(--gray-300);
+}
 
-    /* ============================================================
-       CIBLE
-    ============================================================ */
+/* ============================================================
+   CIBLE
+============================================================ */
     .cible-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       border: var(--border);
-      border-radius: 4px;
-      overflow: hidden;
     }
-    .cible-col { padding: 40px 44px; }
-    .cible-col:first-child {
-      border-right: var(--border);
-      background: var(--gray-100);
-    }
-    .cible-col-label { margin-bottom: 24px; }
+    .cible-col { padding: 36px 40px; }
+    .cible-col:first-child { border-right: var(--border); }
+    .cible-col-label { margin-bottom: 22px; }
 
     .cible-list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 18px;
     }
     .cible-list li {
       display: flex;
       gap: 14px;
       font-size: 14.5px;
-      line-height: 1.6;
+      line-height: 1.55;
       color: var(--gray-700);
     }
     .marker {
       flex-shrink: 0;
       font-family: var(--font-mono);
-      font-size: 13px;
-      margin-top: 3px;
+      font-size: 12px;
+      margin-top: 2px;
       font-weight: 500;
     }
-    .marker-yes { color: var(--red); }
-    .marker-no  { color: var(--gray-500); }
+    .marker-yes { color: var(--black); }
+    .marker-no  { color: var(--red); }
 
     /* ============================================================
        MÉTHODE
     ============================================================ */
-    .methode-steps {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
+    .methode-steps { display: flex; flex-direction: column; }
 
     .step {
-      border: var(--border);
-      border-radius: 0;
-      padding: 36px 32px 40px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      transition: border-color 0.2s, box-shadow 0.2s;
-      background: var(--white);
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 22px;
+      padding: 28px 0;
+      border-bottom: var(--border);
     }
-    .step:hover {
-      border-color: var(--gray-500);
-      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
-    }
+    .step:first-child { border-top: var(--border); }
 
-    .step-header {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
     .step-num {
-      flex-shrink: 0;
       font-family: var(--font-mono);
       font-size: 11px;
-      color: var(--red);
-      letter-spacing: 0.1em;
-      font-weight: 500;
+      color: var(--gray-500);
+      padding-top: 3px;
+      letter-spacing: 0.04em;
     }
     .step-body h3 {
-      font-size: 16px;
+      font-size: 15.5px;
       font-weight: 600;
       color: var(--black);
+      margin-bottom: 7px;
       letter-spacing: -0.01em;
     }
-    .step p {
-      font-size: 14.5px;
+    .step-body p {
+      font-size: 13.5px;
       color: var(--gray-500);
       line-height: 1.65;
+      margin-bottom: 10px;
     }
     .step-output {
-      display: inline-flex;
       font-family: var(--font-mono);
-      font-size: 9.5px;
+      font-size: 11.5px;
       color: var(--red);
-      background: var(--gray-100);
-      padding: 4px 10px;
-      border-radius: 2px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      align-self: flex-start;
+      letter-spacing: 0.02em;
     }
 
     /* ============================================================
@@ -561,8 +515,6 @@
       display: flex;
       flex-direction: column;
       border: var(--border);
-      border-radius: 4px;
-      overflow: hidden;
     }
     .faq-item { border-bottom: var(--border); }
     .faq-item:last-child { border-bottom: none; }
@@ -576,7 +528,7 @@
       cursor: pointer;
       user-select: none;
       list-style: none;
-      transition: background 0.15s, padding 0.2s;
+      transition: background 0.12s;
       min-height: 64px;
     }
     .faq-question:hover { background: var(--gray-100); }
@@ -591,27 +543,16 @@
     }
     .faq-icon {
       flex-shrink: 0;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: var(--gray-100);
-      display: flex;
-      align-items: center;
-      justify-content: center;
       font-family: var(--font-mono);
-      font-size: 16px;
+      font-size: 18px;
       color: var(--gray-500);
-      transition: background 0.2s, transform 0.25s, color 0.2s;
+      transition: transform 0.2s;
       line-height: 1;
     }
-    details[open] .faq-icon {
-      transform: rotate(45deg);
-      background: var(--black);
-      color: var(--white);
-    }
+    details[open] .faq-icon { transform: rotate(45deg); color: var(--black); }
 
     .faq-answer {
-      padding: 16px 28px 24px;
+      padding: 16px 28px 22px;
       font-size: 14px;
       color: var(--gray-500);
       line-height: 1.75;
@@ -625,26 +566,14 @@
       background: var(--gray-100);
       border-top: var(--border);
       padding: 104px 0;
-      position: relative;
-      overflow: hidden;
-    }
-    #contact::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(var(--gray-200) 1px, transparent 0);
-      background-size: 32px 32px;
-      opacity: 0.3;
-      pointer-events: none;
     }
     .contact-inner {
       max-width: var(--max-w);
       margin: 0 auto;
       padding: 0 var(--pad-x);
-      position: relative;
-      z-index: 1;
     }
     .contact-eyebrow { margin-bottom: 28px; }
+    /* gray-700 sur gray-100 → ~8,7:1 (WCAG AA) au lieu de gray-500 → 4,4:1 */
     #contact .label { color: var(--gray-700); }
     .contact-tagline {
       font-size: 13px;
@@ -671,9 +600,12 @@
       line-height: 1.7;
     }
 
+    /* ============================================================
+       FOOTER
+    ============================================================ */
     footer {
       border-top: var(--border);
-      padding: 32px 0;
+      padding: 28px 0;
       background: var(--white);
     }
     .footer-inner {
@@ -688,7 +620,7 @@
     }
     .footer-logo {
       font-family: var(--font-sans);
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 800;
       color: var(--black);
       text-decoration: none;
@@ -696,7 +628,7 @@
     }
     .footer-logo .dot { color: var(--red); }
     .footer-copy { font-size: 12.5px; color: var(--gray-500); }
-    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links { display: flex; gap: 22px; list-style: none; }
     .footer-links a {
       font-size: 12.5px;
       color: var(--gray-500);
@@ -717,12 +649,13 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    #hero           { animation: heroIn 0.55s cubic-bezier(0.16,1,0.3,1) both; }
-    .hero-eyebrow   { animation: heroIn 0.60s cubic-bezier(0.16,1,0.3,1) 0.06s both; }
-    .hero-title     { animation: heroIn 0.75s cubic-bezier(0.16,1,0.3,1) 0.12s both; }
-    .hero-tagline   { animation: heroIn 0.60s cubic-bezier(0.16,1,0.3,1) 0.24s both; }
-    .hero-cta       { animation: heroIn 0.60s cubic-bezier(0.16,1,0.3,1) 0.36s both; }
-    .hero-quote     { animation: heroIn 0.60s cubic-bezier(0.16,1,0.3,1) 0.50s both; }
+    nav           { animation: heroIn 0.55s cubic-bezier(0.16,1,0.3,1) both; }
+    .hero-eyebrow { animation: heroIn 0.65s cubic-bezier(0.16,1,0.3,1) 0.06s both; }
+    .hero-title   { animation: heroIn 0.80s cubic-bezier(0.16,1,0.3,1) 0.13s both; }
+    .hero-headline{ animation: heroIn 0.65s cubic-bezier(0.16,1,0.3,1) 0.26s both; }
+    .hero-tagline { animation: heroIn 0.65s cubic-bezier(0.16,1,0.3,1) 0.36s both; }
+    .hero-cta     { animation: heroIn 0.65s cubic-bezier(0.16,1,0.3,1) 0.46s both; }
+    .hero-quote   { animation: heroIn 0.65s cubic-bezier(0.16,1,0.3,1) 0.60s both; }
 
     .anim {
       opacity: 0;
@@ -740,9 +673,8 @@
     .anim:nth-child(6) { transition-delay: 350ms; }
 
     @media (prefers-reduced-motion: reduce) {
-      .anim, #hero, .hero-eyebrow, .hero-title,
-      .hero-tagline, .hero-cta, .hero-quote,
-      .nav-drawer.open, .nav-backdrop.open {
+      .anim, nav, .hero-eyebrow, .hero-title, .hero-headline,
+      .hero-tagline, .hero-cta, .hero-quote, .nav-drawer.open {
         animation: none !important;
         transition: none !important;
         opacity: 1 !important;
@@ -761,23 +693,22 @@
       :root { --pad-x: 20px; }
 
       .section { padding: 56px 0; }
+      #hero     { padding: 56px 0 48px; }
 
       .nav-links, .nav-cta-desktop { display: none; }
       .nav-hamburger { display: flex; }
-      .hero-title { font-size: clamp(34px, 9vw, 48px); letter-spacing: -0.03em; line-height: 1.1; }
+
+      #hero { min-height: calc(100vh - 58px); padding: clamp(36px, 6vh, 56px) 0 0; }
+      .hero-title { font-size: clamp(13vw, 14vw, 18vw); letter-spacing: -0.03em; line-height: 0.88; }
+      .hero-quote { grid-template-columns: 1fr; gap: 8px; }
+      .hero-quote-label { writing-mode: horizontal-tb; transform: none; }
       .hero-cta { flex-direction: column; align-items: stretch; }
       .hero-cta .btn { justify-content: center; }
 
-      .trust-grid { grid-template-columns: 1fr 1fr; gap: 1px; }
-      .trust-item { border-right: none; padding: 14px 12px; }
-      .trust-item:nth-child(odd) { border-right: var(--border); }
+      .cible-grid { grid-template-columns: 1fr; }
+      .cible-col:first-child { border-right: none; border-bottom: var(--border); }
 
-      .cible-grid { grid-template-columns: 1fr; border-radius: 0; }
-      .cible-col:first-child { border-right: none; border-bottom: var(--border); background: none; }
-      .cible-col { padding: 28px 24px; }
-
-      .methode-steps { grid-template-columns: 1fr; }
-      .step { padding: 28px 24px 32px; }
+      .step { grid-template-columns: 28px 1fr; gap: 14px; }
 
       .faq-question { padding: 18px 20px; min-height: 56px; }
       .faq-answer   { padding: 14px 20px 18px; }
@@ -793,9 +724,9 @@
   <!-- ===== NAVIGATION ===== -->
   <nav aria-label="Navigation principale">
     <div class="nav-inner">
-      <a href="#" class="nav-logo">kAIros<span class="dot">.</span></a>
+      <a href="index.html" class="nav-logo">kAIros<span class="dot">.</span></a>
       <ul class="nav-links" role="list">
-        <li><a href="index.html" class="active">Accueil</a></li>
+        <li><a href="index.html">Accueil</a></li>
         <li><a href="cas-dusage.html">Cas d'usage</a></li>
         <li><a href="simulateur.html">Simulateur</a></li>
         <li><a href="about.html">À propos</a></li>
@@ -807,7 +738,7 @@
     </div>
     <div class="nav-drawer" id="nav-drawer" role="navigation" aria-label="Menu mobile">
       <button class="nav-drawer-close" id="nav-drawer-close" aria-label="Fermer le menu">×</button>
-      <a href="index.html" class="active">Accueil</a>
+      <a href="index.html">Accueil</a>
       <a href="cas-dusage.html">Cas d'usage</a>
       <a href="simulateur.html">Simulateur</a>
       <a href="about.html">À propos</a>
@@ -820,69 +751,53 @@
     <div class="hero-inner">
       <div class="hero-body">
         <div class="hero-eyebrow">
-          <span class="label">Conseil IA pour TPE/PME · Montpellier · Réponse sous 24h</span>
+          <span class="label">Transformation &amp; optimisation des TPE/PME par l'IA</span>
         </div>
-        <h1 class="hero-title">Le <span class="accent">bon moment</span><br> pour passer à l'IA.</h1>
-        <p class="hero-tagline">Identifiez où l'IA peut libérer du temps, réduire les coûts et amplifier votre activité. Puis déployez, un cas d'usage à la fois, avec un retour sur investissement clair à chaque étape.</p>
+        <h1 class="hero-title">kAIros<span class="dot">.</span></h1>
+        <p class="hero-etym-def">/kaï.ʁos/, n.m., grec ancien · Le moment opportun. L'instant décisif où l'action devient possible et nécessaire. Opposé à Chronos, le temps qui passe, Kairos est le temps qui compte.</p>
+        <p class="hero-headline">Accompagnement opérationnel, technique et pédagogique. De la découverte à la mise en œuvre concrète.</p>
+        <ul class="hero-list" role="list">
+          <li>automatisation des processus</li>
+          <li>analyse de données récurrentes</li>
+          <li>tâches répétitives</li>
+          <li>workflows, alertes, notifications intelligentes</li>
+          <li>…etc</li>
+        </ul>
         <div class="hero-cta">
-          <a href="mailto:contact@kairos.fr?subject=Échange découverte kAIros." class="btn btn-red">Réserver mon échange gratuit →</a>
-          <a href="cas-dusage.html" class="btn btn-outline">Voir les cas d'usage →</a>
+          <a href="#contact" class="btn">Premier échange gratuit</a>
+          <a href="#methode" class="btn btn-outline">Voir la méthode</a>
         </div>
       </div>
       <blockquote class="hero-quote" aria-label="Notre posture">
-        <span class="hero-quote-icon" aria-hidden="true">&#8220;</span>
-        <p>Le premier échange ne coûte rien. Attendre a un coût réel.</p>
+        <span class="hero-quote-label">Posture</span>
+        <p>"On arrive avec des questions et un regard extérieur, pas avec une solution toute faite à imposer coûte que coûte."</p>
       </blockquote>
     </div>
   </section>
-
-  <!-- ===== TRUST BAR ===== -->
-  <div class="trust-bar" aria-label="Chiffres clés">
-    <div class="container">
-      <div class="trust-grid">
-        <div class="trust-item">
-          <span class="trust-num">30 min</span>
-          <span class="trust-label">échange découverte gratuit</span>
-        </div>
-        <div class="trust-item">
-          <span class="trust-num">2–6 sem.</span>
-          <span class="trust-label">de la validation au premier déploiement</span>
-        </div>
-        <div class="trust-item">
-          <span class="trust-num">×2</span>
-          <span class="trust-label">ROI observé sur les premiers cas d'usage déployés</span>
-        </div>
-        <div class="trust-item">
-          <span class="trust-num">+6 h</span>
-          <span class="trust-label">récupérées par semaine en moyenne</span>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- ===== CIBLE ===== -->
   <section id="cible" class="section" aria-label="Pour qui">
     <div class="container">
       <div class="section-header">
         <span class="label">Cible</span>
-        <h2 class="section-title">kAIros. est fait pour vous<span class="dot"> ?</span></h2>
-        <p class="section-sub">La plupart des dirigeants de TPE/PME savent que l'IA peut changer leur quotidien. Là où ça coince, c'est l'étape suivante : comment, par où, avec qui. Sans se faire survendre une solution qui ne tient pas.</p>
+        <h2 class="section-title">Pour qui<span class="dot">,</span> pour quoi<span class="dot">.</span></h2>
+        <p class="section-sub">On travaille avec des entreprises qui savent que l'IA peut transformer leur business. Il suffit de trouver le bon point de départ.</p>
       </div>
       <div class="cible-grid">
         <div class="cible-col">
           <div class="cible-col-label"><span class="label">On travaille avec</span></div>
           <ul class="cible-list" role="list">
-            <li><span class="marker marker-yes" aria-hidden="true">✦</span><span>Des dirigeants qui veulent passer à l'action sur l'IA, sans s'y perdre.</span></li>
-            <li><span class="marker marker-yes" aria-hidden="true">✦</span><span>Des structures de 1 à 50 personnes avec des processus récurrents à fort potentiel d'automatisation.</span></li>
-            <li><span class="marker marker-yes" aria-hidden="true">✦</span><span>Des équipes qui veulent gagner en efficacité sans tout réapprendre de zéro, avec un accompagnement progressif.</span></li>
+            <li><span class="marker marker-yes" aria-hidden="true">✦</span><span>Dirigeants convaincus par le potentiel de l'IA, mais qui ne savent pas encore par où commencer.</span></li>
+            <li><span class="marker marker-yes" aria-hidden="true">✦</span><span>TPE/PME qui ont identifié des marges de progression : sur le temps, les coûts financiers et humains.</span></li>
+            <li><span class="marker marker-yes" aria-hidden="true">✦</span><span>Équipes prêtes à intégrer de nouveaux usages, avec un accompagnement humain et progressif.</span></li>
           </ul>
         </div>
         <div class="cible-col">
           <div class="cible-col-label"><span class="label">Pas pour</span></div>
           <ul class="cible-list" role="list">
-            <li><span class="marker marker-no" aria-hidden="true">✕</span><span>Les grands groupes avec DSI interne, budgets innovation dédiés et équipes techniques.</span></li>
-            <li><span class="marker marker-no" aria-hidden="true">✕</span><span>Les structures qui veulent une solution livrée sans s'impliquer dans le changement.</span></li>
-            <li><span class="marker marker-no" aria-hidden="true">✕</span><span>Ceux qui cherchent une technologie à acheter, pas une transformation à comprendre et maîtriser.</span></li>
+            <li><span class="marker marker-no" aria-hidden="true">✕</span><span>Les grandes entreprises disposant d'équipes techniques en interne.</span></li>
+            <li><span class="marker marker-no" aria-hidden="true">✕</span><span>Les entreprises en difficulté structurelle qui voient l'IA comme une solution miracle.</span></li>
+            <li><span class="marker marker-no" aria-hidden="true">✕</span><span>Les structures qui recherchent une solution prête à l'emploi sans vouloir s'y impliquer.</span></li>
           </ul>
         </div>
       </div>
@@ -894,41 +809,41 @@
     <div class="container">
       <div class="section-header">
         <span class="label">Méthode</span>
-        <h2 class="section-title">Comment on travaille, étape par étape<span class="dot">.</span></h2>
-        <p class="section-sub">Chaque étape a un livrable concret. Vous savez ce que vous obtenez, à quel moment et pour quel investissement, avant de signer quoi que ce soit.</p>
+        <h2 class="section-title">Quelle est notre méthode de transformation ?</h2>
+        <p class="section-sub">Une méthode en 4 étapes, à votre rythme, avec des actions concrètes et mesurables.</p>
       </div>
       <div class="methode-steps">
         <div class="step">
-          <div class="step-header">
-            <span class="step-num">01</span>
-            <div class="step-body"><h3>Échange &amp; découverte</h3></div>
+          <span class="step-num">01</span>
+          <div class="step-body">
+            <h3>Échange &amp; découverte</h3>
+            <p>Un entretien de 30 minutes, en visio ou physiquement, précédé d'un court questionnaire. On évalue ensemble si l'IA est pertinente pour vous et on vous dit honnêtement où se situent vos opportunités.</p>
+            <span class="step-output">Rapport des opportunités identifiées et plan d'action priorisé</span>
           </div>
-          <p>30 minutes, en visio ou en physique. On écoute votre activité, vos blocages, vos contraintes. À la fin, vous savez si l'IA peut vraiment vous apporter quelque chose et par où commencer. Sans filtre ni argumentaire.</p>
-          <span class="step-output">Plan d'action priorisé et opportunités identifiées</span>
         </div>
         <div class="step">
-          <div class="step-header">
-            <span class="step-num">02</span>
-            <div class="step-body"><h3>Diagnostic terrain</h3></div>
+          <span class="step-num">02</span>
+          <div class="step-body">
+            <h3>Diagnostic terrain</h3>
+            <p>Une à deux journées dans vos locaux. Livrable de 5 à 10 pages, basé sur les opportunités identifiées dans l'étape précédente : diagnostic détaillé des opportunités sélectionnées, cas d'usage prioritaires, estimation du ROI et devis d'implémentation.</p>
+            <span class="step-output">Rapport complet : diagnostic, cas d'usage prioritaires, ROI et devis</span>
           </div>
-          <p>Une à deux journées dans vos locaux. On observe les vrais flux de travail, on échange avec vos équipes, on identifie les points de friction. Le livrable : un rapport de 5 à 10 pages avec le ROI estimé de chaque opportunité et un ordre de priorité clair. Rien de générique.</p>
-          <span class="step-output">Rapport complet : cas d'usage priorisés, ROI estimé, devis</span>
         </div>
         <div class="step">
-          <div class="step-header">
-            <span class="step-num">03</span>
-            <div class="step-body"><h3>Mise en œuvre</h3></div>
+          <span class="step-num">03</span>
+          <div class="step-body">
+            <h3>Mise en place des cas d'usage</h3>
+            <p>Sur la base du diagnostic, on concrétise chaque cas d'usage prioritaire. Ils s'implémentent au fur et à mesure, pas forcément tous d'un coup. Chaque décision est guidée par le ROI visé : temps récupéré, coûts réduits, ressources libérées. Le devis est celui établi à l'étape 2.</p>
+            <span class="step-output">Solution opérationnelle déployée et documentée</span>
           </div>
-          <p>Un cas d'usage à la fois, dans l'ordre validé ensemble. On configure, on intègre aux outils existants, on teste en conditions réelles. Votre équipe est formée au fur et à mesure. Pas en fin de mission, quand tout le monde a oublié.</p>
-          <span class="step-output">Solutions opérationnelles déployées et documentées</span>
         </div>
         <div class="step">
-          <div class="step-header">
-            <span class="step-num">04</span>
-            <div class="step-body"><h3>Suivi &amp; autonomie</h3></div>
+          <span class="step-num">04</span>
+          <div class="step-body">
+            <h3>Mesure &amp; optimisation</h3>
+            <p>Trois mois de suivi inclus : un point mensuel et des ajustements au fil de l'usage. La continuité est possible sur abonnement, sans engagement.</p>
+            <span class="step-output">Ajustements mensuels et suivi des résultats</span>
           </div>
-          <p>Trois mois de suivi inclus après chaque déploiement : un point mensuel pour vérifier que les outils tiennent la route, affiner ce qui doit l'être, répondre aux questions de l'équipe. Notre objectif : que vous n'ayez plus besoin de nous. Si vous voulez continuer, pas d'engagement imposé.</p>
-          <span class="step-output">Équipe autonome, suivi mensuel, ajustements si nécessaire</span>
         </div>
       </div>
     </div>
@@ -939,8 +854,8 @@
     <div class="container">
       <div class="section-header">
         <span class="label">FAQ</span>
-        <h2 class="section-title">Questions fréquentes<span class="dot">.</span></h2>
-        <p class="section-sub">Les vraies questions que posent les dirigeants avant de se lancer. Avec des réponses directes, sans jargon ni langue de bois.</p>
+        <h2 class="section-title">Questions fréquentes.</h2>
+        <p class="section-sub">Les questions qu'on nous pose le plus souvent avant de démarrer.</p>
       </div>
       <div class="faq-list">
         <details class="faq-item">
@@ -949,7 +864,7 @@
             <span class="faq-icon" aria-hidden="true">+</span>
           </summary>
           <div class="faq-answer">
-            Oui. Sans condition, sans signature, sans relance. 30 minutes pour parler de votre activité et de ce qui vous ralentit. On vous dit honnêtement s'il y a quelque chose à faire et par où commencer. Si l'IA n'est pas la bonne réponse, on vous le dit aussi.
+            Oui, sans condition. C'est un échange de 30 minutes : on parle de votre activité, de vos processus, de ce qui vous prend du temps. À la fin, on vous dit honnêtement si l'IA peut vous aider et de quelle façon. Si ce n'est pas le cas, on vous le dit aussi.
           </div>
         </details>
         <details class="faq-item">
@@ -958,7 +873,7 @@
             <span class="faq-icon" aria-hidden="true">+</span>
           </summary>
           <div class="faq-answer">
-            Non, c'est justement là où on intervient. On part de votre organisation telle qu'elle est, pas d'un idéal technique. Les solutions qu'on déploie sont choisies pour être opérationnelles par vos équipes, pas par des ingénieurs. Et on reste présent les trois premiers mois pour que la transition se fasse naturellement.
+            Non. C'est justement le rôle de kAIros. On part de votre organisation telle qu'elle est, pas d'un état idéal. Les solutions déployées sont choisies pour être opérationnelles rapidement par vos équipes, et nous restons disponibles pendant les trois premiers mois pour accompagner la prise en main.
           </div>
         </details>
         <details class="faq-item">
@@ -967,7 +882,7 @@
             <span class="faq-icon" aria-hidden="true">+</span>
           </summary>
           <div class="faq-answer">
-            Un diagnostic de 5 à 10 pages avec : un état des lieux de vos processus, les points de friction classés par priorité, deux à quatre cas d'usage IA concrets avec leur ROI estimé, et un devis transparent pour la suite. Le diagnostic a de la valeur en soi. Vous pouvez vous y arrêter.
+            Un document de 5 à 10 pages comprenant : un état des lieux structuré, les points de friction prioritaires, deux à quatre cas d'usage IA concrets avec estimation du ROI, et un devis chiffré pour la suite. Vous pouvez vous en tenir au diagnostic, il a de la valeur indépendamment de la suite.
           </div>
         </details>
         <details class="faq-item">
@@ -976,7 +891,7 @@
             <span class="faq-icon" aria-hidden="true">+</span>
           </summary>
           <div class="faq-answer">
-            Comptez deux à six semaines entre le feu vert et la mise en production du premier cas d'usage. On commence par le plus impactant, on déploie, on ajuste, vos équipes prennent la main au fur et à mesure. Pas de big bang. Pas de projet qui s'emballe. Un résultat visible rapidement, pour ancrer la dynamique.
+            Pour un projet standard, un premier cas d'usage ciblé, comptez deux à six semaines entre le démarrage et la mise en production. On commence par le cas à plus fort impact, on itère, on ajuste, puis vos équipes prennent progressivement la main.
           </div>
         </details>
         <details class="faq-item">
@@ -985,7 +900,7 @@
             <span class="faq-icon" aria-hidden="true">+</span>
           </summary>
           <div class="faq-answer">
-            C'est vous qui décidez, point. On peut déployer sur votre infrastructure, chez un hébergeur de votre choix (OVH, Hostinger…), ou utiliser des services cloud sécurisés. Chaque choix est documenté et validé avec vous avant la moindre mise en place. Aucune donnée ne part sans votre accord explicite.
+            Vous décidez. On peut déployer des solutions hébergées dans votre infrastructure ou chez un prestataire de votre choix (OVH, Hostinger…), ou faire appel à des services cloud (Anthropic, OpenAI) selon vos préférences. L'hébergement est documenté et validé avec vous avant toute mise en place.
           </div>
         </details>
         <details class="faq-item">
@@ -994,7 +909,7 @@
             <span class="faq-icon" aria-hidden="true">+</span>
           </summary>
           <div class="faq-answer">
-            Les trois mois de suivi sont inclus dans la mission : un point mensuel pour vérifier que tout tient la route, répondre aux questions de vos équipes, et ajuster ce qui doit l'être. Après, si vous voulez continuer, on met en place un rythme léger, sans engagement.
+            Toute mission inclut trois mois de suivi : un point mensuel et des ajustements à la marge.
           </div>
         </details>
       </div>
@@ -1005,22 +920,23 @@
   <section id="contact" aria-label="Contact">
     <div class="contact-inner">
       <div class="contact-eyebrow">
-        <span class="label">Premier échange</span>
+        <span class="label">Premier pas</span>
       </div>
-      <p class="contact-tagline">Pas d'argumentaire. Juste une conversation honnête.</p>
-      <h2 class="contact-title">Votre kairos, c'est maintenant<span class="dot">.</span></h2>
-      <p class="contact-sub">30 minutes pour savoir si l'IA peut changer quelque chose dans votre activité et par où commencer. Gratuit, sans engagement, sans relance.</p>
-      <a href="mailto:contact@kairos.fr?subject=Échange découverte kAIros." class="btn btn-red">Réserver mon créneau gratuit →</a>
+      <p class="contact-tagline">Une opportunité commence toujours par un échange.</p>
+      <h2 class="contact-title">Parlons de votre kairos<span class="dot">.</span></h2>
+      <p class="contact-sub">30 minutes, gratuites, sans engagement. On évalue ensemble si l'IA peut vous apporter une valeur réelle et par où commencer concrètement.</p>
+      <a href="mailto:contact@kairos.fr" class="btn">Prendre contact →</a>
     </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
   <footer>
     <div class="footer-inner">
-      <a href="#" class="footer-logo">kAIros<span class="dot">.</span></a>
+      <a href="index.html" class="footer-logo">kAIros<span class="dot">.</span></a>
       <p class="footer-copy">© 2026 kAIros. Conseil IA pour TPE/PME</p>
       <ul class="footer-links" role="list">
         <li><a href="#methode">Méthode</a></li>
+        <li><a href="about.html">À propos</a></li>
         <li><a href="mailto:contact@kairos.fr">Contact</a></li>
       </ul>
     </div>
@@ -1063,14 +979,13 @@
         document.body.style.overflow = '';
       }
 
-      function openMenu() {
-        btn.classList.add('open');
-        drawer.classList.add('open');
-        btn.setAttribute('aria-expanded', 'true');
-        document.body.style.overflow = 'hidden';
-      }
+      btn.addEventListener('click', () => {
+        const open = btn.classList.toggle('open');
+        drawer.classList.toggle('open', open);
+        btn.setAttribute('aria-expanded', String(open));
+        document.body.style.overflow = open ? 'hidden' : '';
+      });
 
-      btn.addEventListener('click', () => drawer.classList.contains('open') ? close() : openMenu());
       drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
       const closeBtn = document.getElementById('nav-drawer-close');
       if (closeBtn) closeBtn.addEventListener('click', close);
