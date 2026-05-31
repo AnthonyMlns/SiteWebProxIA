@@ -17,6 +17,16 @@ body:
     attributes:
       label: "Critères d'acceptation"
       placeholder: "- [ ] Le bouton X fait Y"
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "Priorité"
+      options:
+        - Haute
+        - Moyenne
+        - Basse
+    validations:
+      required: true
   - type: textarea
     id: notes
     attributes:

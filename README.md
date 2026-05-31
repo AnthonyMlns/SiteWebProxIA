@@ -1,7 +1,7 @@
 # kAIros. — Site Web Landing Page
 
 ![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-deployed-brightgreen)
-![Last Commit](https://img.shields.io/github/last-commit/AnthonyMlns/SiteWebKairosIA)
+![Last Commit](https://img.shields.io/github/last-commit/AnthonyMlns/SiteWebKairosIA-live)
 
 Landing page pour **kAIros.**, cabinet de conseil en transformation IA pour TPE/PME françaises.
 
@@ -9,55 +9,84 @@ Landing page pour **kAIros.**, cabinet de conseil en transformation IA pour TPE/
 
 ## Description
 
-Site vitrine statique (HTML/CSS/JS vanilla) avec cinq pages :
+Site vitrine statique (HTML/CSS/JS vanilla) avec cinq pages, alimenté dynamiquement via **Sanity CMS** pour les cas d'usage :
+
 - **`index.html`** — page d'accueil (hero, cible, méthode, FAQ, contact)
 - **`simulateur.html`** — simulateur de ROI IA (2 panneaux, sliders, métriques)
-- **`cas-dusage.html`** — cas d'usage concrets (3 colonnes : gagner du temps, amplifier l'activité, construire sur mesure)
+- **`cas-dusage.html`** — cas d'usage concrets (3 colonnes statiques + section dynamique via Sanity)
 - **`about.html`** — À propos (étymologie, vision, posture, engagement, CTA)
 - **`404.html`** — page d'erreur personnalisée (404)
 
 ## Stack
 
-- HTML/CSS/JS vanilla
-- Design system : tokens CSS (variables) · [`design-system.md`](design-system.md) · `#cc2c22` rouge accent · Inter 800 (titres) + JetBrains Mono (labels)
-- SEO : schema.org JSON-LD (Organization, LocalBusiness, ProfessionalService) · Open Graph · Twitter Card · `llms.txt`
-- Responsive : hamburger menu mobile full-screen · breakpoints 900 px / 640 px
-- Animations : `heroIn` page-load stagger · IntersectionObserver scroll · `prefers-reduced-motion`
+- **Frontend** : HTML/CSS/JS vanilla
+- **CMS** : Sanity (`sanity/`) — headless CMS, projectId `deh20epq`, dataset `production`
+- **Design system** : tokens CSS (variables) · [`design-system.md`](design-system.md) · `#cc2c22` rouge accent · Inter 800 (titres) + JetBrains Mono (labels)
+- **SEO** : schema.org JSON-LD (Organization, LocalBusiness, ProfessionalService) · Open Graph · Twitter Card · `llms.txt`
+- **Responsive** : hamburger menu mobile full-screen · breakpoints 900 px / 640 px
+- **Animations** : `heroIn` page-load stagger · IntersectionObserver scroll · `prefers-reduced-motion`
 
 ## Prérequis
 
 - Un navigateur web moderne (Chrome, Firefox, Safari, Edge)
-- Aucun serveur ni dépendance requis
+- Node.js 18+ pour Sanity Studio
 
 ## Installation
 
 ```bash
-git clone https://github.com/AnthonyMlns/SiteWebKairosIA.git
-cd SiteWebKairosIA
+git clone https://github.com/AnthonyMlns/SiteWebKairosIA-live.git
+cd SiteWebKairosIA-live
 ```
 
-## Utilisation
-
-Ouvrez `index.html` dans votre navigateur :
+### Lancer le site
 
 ```bash
-# macOS
-open index.html
+# Serveur local (nécessaire pour le fetch Sanity)
+npx serve .
 
-# Windows
-start index.html
+# Ou via Python
+python -m http.server 8000
+```
+
+### Lancer Sanity Studio
+
+```bash
+cd sanity
+npm install
+npm run dev
+```
+
+Configurez votre `.env` à partir de `.env.example` :
+
+```env
+SANITY_PROJECT_ID=deh20epq
+SANITY_DATASET=production
+SANITY_TOKEN=votre_read_token
 ```
 
 ## Structure du projet
 
 ```
-├── index.html          # Accueil — hero, cible, méthode, FAQ, contact
-├── about.html          # À propos — étymologie, vision, posture, équipe
-├── cas-dusage.html     # Cas d'usage concrets (3 colonnes)
-├── simulateur.html     # Simulateur de ROI IA
-├── 404.html            # Page d'erreur personnalisée
-├── design-system.md    # Tokens et principes du design system
-├── llms.txt            # Indexation LLM
+├── index.html              # Accueil — hero, cible, méthode, FAQ, contact
+├── about.html              # À propos — étymologie, vision, posture
+├── cas-dusage.html         # Cas d'usage (statique + dynamique Sanity)
+├── simulateur.html         # Simulateur de ROI IA
+├── 404.html                # Page d'erreur personnalisée
+│
+├── js/
+│   └── sanity.js           # Client Sanity CDN (fetch + render)
+│
+├── sanity/                 # Sanity CMS Studio
+│   ├── package.json
+│   ├── sanity.cli.js
+│   ├── sanity.config.js
+│   └── schemas/
+│       ├── index.js
+│       └── useCaseCategory.js   # Schéma : catégorie de cas d'usage
+│
+├── design-system.md        # Tokens et principes du design system
+├── llms.txt                # Indexation LLM
+├── .env.example            # Variables d'environnement Sanity
 ├── LICENSE
 └── README.md
 ```
@@ -65,11 +94,14 @@ start index.html
 ## Roadmap
 
 - [x] **MVP** — Landing page statique
-- [x] **v2 — Mise en production** — about.html, simulateur ROI, cas-dusage.html, rebranding kAIros., design system, déploiement GitHub Pages
-- [ ] **v2.1** — Pages services dédiées + témoignages clients
-- [ ] **v2.2** — Rédaction de 3 cas d'usage métier détaillés (fiches contenu)
-- [ ] **v2.3** — 3 à 4 articles de blog pour asseoir le discours et la légitimité (IA, TPE/PME, méthode)
-- [ ] **v3** — Back-office CMS léger + formulaire de contact fonctionnel
+- [x] **v2 — Mise en production** — about.html, simulateur ROI, cas-dusage.html, rebranding kAIros., design system, GitHub Pages
+- [x] **v2.1** — Page 404, animations unifiées, navigation simplifiée (Accueil, Cas d'usage, Simulateur, À propos)
+- [x] **v3 — Sanity CMS** — Intégration Sanity, schéma useCaseCategory, chargement dynamique des cas d'usage
+- [ ] **Blog** — Schéma Sanity + page blog dédiée avec articles
+- [ ] **Témoignages clients** — Section témoignages dynamiques via Sanity
+- [ ] **Services dédiés** — Pages services individuelles
+- [ ] **Formulaire de contact** — Formulaire fonctionnel (au lieu du simple mailto)
+- [ ] **Contenu rédactionnel** — 3 articles de blog, cas d'usage métier détaillés
 
 ## Contribuer
 

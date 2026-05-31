@@ -1,5 +1,5 @@
 name: "Bug Report"
-description: "Signaler un bug"
+description: "Signaler un bug sur le site"
 title: "bug: "
 labels: ["bug"]
 assignees:
@@ -17,6 +17,11 @@ body:
     attributes:
       label: "Étapes pour reproduire"
       placeholder: "1. Aller sur... 2. Cliquer sur..."
+  - type: input
+    id: page
+    attributes:
+      label: "Page concernée"
+      placeholder: "index.html, simulateur.html, cas-dusage.html..."
   - type: input
     id: environment
     attributes:
